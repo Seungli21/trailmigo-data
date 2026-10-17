@@ -166,6 +166,8 @@ class Terrain:
 TRAIL_HW = {"path", "footway", "bridleway", "track", "steps"}
 PAVED = {"asphalt", "concrete", "paved", "paving_stones", "concrete:plates", "sett", "chipseal"}
 ROUTE_TYPES = {"hiking", "foot", "running"}
+HISTORIC_SIGHTS = {"ruins", "archaeological_site", "fort", "mine", "mine_shaft", "wreck", "castle", "monument",
+                   "aircraft", "tomb", "building", "manor", "railway_car", "locomotive", "cannon"}
 
 
 class Reader(osmium.SimpleHandler):
@@ -203,7 +205,7 @@ class Reader(osmium.SimpleHandler):
             self.points.append(("beach", name, lat, lon, ""))
         elif nat == "arch":
             self.points.append(("arch", name, lat, lon, ""))
-        if "historic" in t and t.get("historic") not in ("no", "milestone", "boundary_stone"):
+        if t.get("historic") in HISTORIC_SIGHTS:
             self.points.append(("historic", name, lat, lon, t.get("historic")))
         if t.get("amenity") == "parking":
             self.parking.append((lat, lon))
@@ -272,6 +274,11 @@ def is_trail_way(tags):
         if tags.get("surface", "") in PAVED:
             return False
     return True
+
+
+def paved_majority(tags_list):
+    surfaces = [t.get("surface", "") for t in tags_list]
+    return sum(1 for x in surfaces if x in PAVED) > len(surfaces) / 2
 
 
 def chain(pieces, join_m=30.0):
@@ -420,7 +427,7 @@ def build(args):
         for members in clusters.values():
             pieces = [rd.ways[w][1] for w in members]
             total = sum(line_len(p) for p in pieces)
-            if total < args.min_trail_m:
+            if total < args.min_trail_m or total > args.max_route_km * 1000:
                 continue
             tags_list = [rd.ways[w][0] for w in members]
             # a named track (fire road) counts only if it looks like a trail, not a farm road
@@ -575,6 +582,12 @@ def build(args):
             if best is not None:
                 park, _, _, park_wp, park_wd = rd.parks[best]
 
+        # City walkways (sidewalk-like footways, paved promenades) only count inside a park.
+        hw_kinds = {t.get("highway") for t in wt}
+        urban_like = hw_kinds <= {"footway", "steps"} or paved_majority(wt)
+        if urban_like and not park and c["kind"] != "route":
+            continue
+
         # Parking near either end
         parking = 0
         if parking_tree is not None:
@@ -612,8 +625,9 @@ def build(args):
         poly = ";".join(encode_polyline(simplify(p)) for p in pieces_out if len(p) > 1)
         prof = ",".join(str(int(round(v))) for v in profile)
 
+        display = " / ".join(x.strip() for x in c["name"].split(";") if x.strip())
         out_rows.append(dict(
-            name=c["name"], name_lc=norm_name(c["name"]), park=park, park_lc=norm_name(park),
+            name=display, name_lc=norm_name(display), park=park, park_lc=norm_name(park),
             kind=c["kind"], th_lat=start[0], th_lon=start[1], c_lat=clat, c_lon=clon,
             min_lat=min_lat, min_lon=min_lon, max_lat=max_lat, max_lon=max_lon,
             length_m=round(c["total"], 1), trip_m=round(trip, 1), route_type=rtype,
@@ -685,7 +699,7 @@ def write_db(args, rows, parks):
         "schema": "1",
         "region_id": args.region_id,
         "region_name": args.region_name,
-        "built": time.strftime("%Y-%m-%d"),
+        "built": time.strftime("%Y-%m-%d %H:%M"),
         "trails": str(len(rows)),
         "attribution": "Trail data © OpenStreetMap contributors (ODbL). Elevation: Mapzen / AWS Open Data terrain tiles.",
     }

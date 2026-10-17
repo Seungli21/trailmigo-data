@@ -20,7 +20,7 @@ for rid, r in regions.items():
     entry = {
         "id": rid, "name": r["name"], "url": f"{base_url}/{rid}.db.gz",
         "bytes": os.path.getsize(gz_path), "db_bytes": os.path.getsize(db_path), "sha256": sha,
-        "built": time.strftime("%Y-%m-%d"), "trails": trails, "bbox": [round(v, 4) for v in bbox], "schema": 1,
+        "built": time.strftime("%Y-%m-%d %H:%M"), "trails": trails, "bbox": [round(v, 4) for v in bbox], "schema": 1,
     }
     manifest["packs"] = [p for p in manifest["packs"] if p["id"] != rid] + [entry]
 json.dump(manifest, open(os.path.join(out_dir, "packs.json"), "w"), indent=2)
