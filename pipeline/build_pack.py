@@ -539,7 +539,7 @@ def build_suggested(rd, args, park_tree, park_geoms):
             best = max(items)
             options.append((best[0], d, d_v, best))
         options.sort(key=lambda o: (-o[0], o[1]))
-        for pr, d, d_v, (_, kind, name, extra) in options[:3]:
+        for pr, d, d_v, (_, kind, name, extra) in options[:4]:
             steps = walk(prev, s_v, d_v)
             if not steps:
                 continue
@@ -553,7 +553,8 @@ def build_suggested(rd, args, park_tree, park_geoms):
             if back:
                 L2 = sum(edges[e][3] for _, e in back)
                 overlap = sum(edges[e][3] for _, e in back if e in set1)
-                if L2 <= 2.0 * d and overlap / max(L2, 1) < 0.3:
+                # lollipop loops with a longer way back (like Mishe Mokwa / Sandstone Peak) count too
+                if L2 <= 3.2 * d and overlap / max(L2, 1) < 0.35:
                     is_loop = True
             steps_all = steps + (back if is_loop else [])
             all_edges = [e for _, e in steps_all]
@@ -568,7 +569,8 @@ def build_suggested(rd, args, park_tree, park_geoms):
                         order.append(n)
             total = sum(edges[e][3] for e in all_edges)
             dominant = max(share, key=share.get) if share else ""
-            if not is_loop and dominant and share[dominant] >= 0.9 * total:
+            dest_in_name = bool(name) and name.lower() in dominant.lower()
+            if not is_loop and dominant and share[dominant] >= 0.9 * total and (not name or dest_in_name):
                 continue  # just a stretch of one named trail, which is already listed
             label = name or {"viewpoint": "Viewpoint", "waterfall": "Waterfall", "hot_spring": "Hot Spring",
                               "arch": "Rock Arch", "cave": "Cave"}.get(kind, "Summit")
