@@ -1,0 +1,7 @@
+[
+  {
+    "id": "socal",
+    "name": "Southern California",
+    "source": "https://download.geofabrik.de/north-america/us/california/socal-latest.osm.pbf"
+  }
+]

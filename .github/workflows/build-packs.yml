@@ -1,0 +1,80 @@
+name: Build trail packs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['pipeline/**', '.github/workflows/build-packs.yml']
+  schedule:
+    - cron: '17 9 3 * *'   # monthly refresh of OpenStreetMap data
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool > /dev/null
+          pip install -q osmium==4.3.1 shapely pillow numpy requests
+
+      - name: Terrain tile cache
+        uses: actions/cache@v4
+        with:
+          path: terrain-cache
+          key: terrain-z12-${{ github.run_id }}
+          restore-keys: terrain-z12-
+
+      - name: Build packs
+        run: |
+          set -o pipefail
+          mkdir -p out
+          python3 - <<'PY' > regions.txt
+          import json
+          for r in json.load(open("pipeline/regions.json")):
+              print(r["id"], r["source"], r["name"], sep="\t")
+          PY
+          while IFS=$'\t' read -r id src name; do
+            echo "::group::$name"
+            curl -sSL --retry 3 -o "$id.osm.pbf" "$src"
+            ls -la "$id.osm.pbf"
+            osmium tags-filter "$id.osm.pbf" \
+              w/highway=path,footway,bridleway,track,steps \
+              r/route=hiking,foot,running \
+              nwr/natural=peak,volcano,waterfall,water,beach,hot_spring,geyser,cave_entrance,spring,arch \
+              n/waterway=waterfall w/waterway=river n/tourism=viewpoint \
+              nwr/amenity=parking n/highway=trailhead \
+              nwr/boundary=protected_area,national_park nwr/leisure=nature_reserve,park n/historic \
+              -o "$id.filtered.osm.pbf" --overwrite
+            rm "$id.osm.pbf"
+            python3 pipeline/build_pack.py "$id.filtered.osm.pbf" "out/$id.db" --region-id "$id" --region-name "$name" 2>&1 | tee -a build-log.txt
+            python3 pipeline/report.py "out/$id.db" 2>&1 | tee -a build-log.txt
+            gzip -9 -k "out/$id.db"
+            echo "::endgroup::"
+          done < regions.txt
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          base="https://github.com/${{ github.repository }}/releases/download/packs"
+          gh release view packs > /dev/null 2>&1 || gh release create packs --title "Trail packs" --notes "Trailmigo trail databases. Data © OpenStreetMap contributors (ODbL). Elevation: Mapzen / AWS Open Data."
+          gh release download packs -p packs.json -O old-packs.json 2>/dev/null || true
+          python3 pipeline/make_manifest.py out "$base" old-packs.json
+          gh release upload packs out/*.db.gz out/packs.json --clobber
+
+      - name: Save build log
+        if: always()
+        run: |
+          mkdir -p logs && cp build-log.txt logs/ 2>/dev/null || true
+          cp out/packs.json logs/ 2>/dev/null || true
+          cd logs
+          git init -q -b logs
+          git config user.name build-bot; git config user.email build-bot@users.noreply.github.com
+          git add -A; git commit -q -m "logs ${GITHUB_SHA}" || true
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" logs
