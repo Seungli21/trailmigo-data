@@ -180,6 +180,7 @@ class Reader(osmium.SimpleHandler):
         self.water = []          # (name, polygon)
         self.rivers = []         # (name, [(lat, lon)])
         self.parking = []        # (lat, lon)
+        self.trailheads = []     # (lat, lon, name, kind)
         self.wkb = osmium.geom.WKBFactory()
 
     def node(self, n):
@@ -209,8 +210,10 @@ class Reader(osmium.SimpleHandler):
             self.points.append(("historic", name, lat, lon, t.get("historic")))
         if t.get("amenity") == "parking":
             self.parking.append((lat, lon))
+            self.trailheads.append((lat, lon, name, "parking"))
         if t.get("highway") == "trailhead":
             self.parking.append((lat, lon))
+            self.trailheads.append((lat, lon, name, "trailhead"))
 
     def way(self, w):
         t = w.tags
@@ -222,11 +225,14 @@ class Reader(osmium.SimpleHandler):
         if len(coords) < 2:
             return
         if hw in TRAIL_HW:
-            self.ways[w.id] = (dict(t), coords)
+            self.ways[w.id] = (dict(t), coords, [n.ref for n in w.nodes])
         if t.get("waterway") == "river" and t.get("name"):
             self.rivers.append((t.get("name"), coords))
         if t.get("amenity") == "parking":
-            self.parking.append(coords[0])
+            clat = sum(c[0] for c in coords) / len(coords)
+            clon = sum(c[1] for c in coords) / len(coords)
+            self.parking.append((clat, clon))
+            self.trailheads.append((clat, clon, t.get("name", ""), "parking"))
 
     def relation(self, r):
         t = r.tags
@@ -362,6 +368,259 @@ def difficulty(trip_m, gain_m, sac):
     return level
 
 
+# ---------------------------------------------------------------- suggested routes (loops & destinations)
+
+DEST_WEIGHT = {"peak": 3.0, "waterfall": 3.0, "viewpoint": 2.0, "hot_spring": 2.5, "arch": 2.0, "cave": 1.5}
+
+
+def build_graph(rd):
+    """Trail network: vertices are junctions and ends, edges are trail pieces between them."""
+    use = defaultdict(int)
+    ways = {wid: v for wid, v in rd.ways.items() if is_trail_way(v[0])}
+    for wid, (tags, coords, refs) in ways.items():
+        for i, r in enumerate(refs):
+            use[r] += 2 if i in (0, len(refs) - 1) else 1
+    vpos = {}
+    edges = []   # (u, v, coords, length, way_id)
+    adj = defaultdict(list)
+    for wid, (tags, coords, refs) in ways.items():
+        cut = [i for i, r in enumerate(refs) if use[r] >= 2]
+        for a, b in zip(cut, cut[1:]):
+            seg = coords[a:b + 1]
+            if len(seg) < 2:
+                continue
+            L = line_len(seg)
+            if L <= 0:
+                continue
+            e = len(edges)
+            edges.append((refs[a], refs[b], seg, L, wid))
+            adj[refs[a]].append((e, refs[b]))
+            adj[refs[b]].append((e, refs[a]))
+            vpos[refs[a]] = coords[a]
+            vpos[refs[b]] = coords[b]
+    return ways, edges, adj, vpos
+
+
+def dijkstra(adj, edges, src, cutoff, penalty=None):
+    import heapq
+    dist = {src: 0.0}
+    prev = {}
+    heap = [(0.0, src)]
+    while heap:
+        d, u = heapq.heappop(heap)
+        if d > dist.get(u, 1e18) or d > cutoff:
+            continue
+        for e, v in adj[u]:
+            w = edges[e][3] * (penalty.get(e, 1.0) if penalty else 1.0)
+            nd = d + w
+            if nd < dist.get(v, 1e18):
+                dist[v] = nd
+                prev[v] = (u, e)
+                heapq.heappush(heap, (nd, v))
+    return dist, prev
+
+
+def walk(prev, src, dst):
+    """List of (from_vertex, edge) from src to dst, or None."""
+    if dst not in prev and dst != src:
+        return None
+    out = []
+    v = dst
+    while v != src:
+        u, e = prev[v]
+        out.append((u, e))
+        v = u
+    out.reverse()
+    return out
+
+
+def path_coords(edges, steps):
+    pts = []
+    for u, e in steps:
+        a, b, seg, L, wid = edges[e]
+        seg = seg if a == u else seg[::-1]
+        pts.extend(seg if not pts else seg[1:])
+    return pts
+
+
+def build_suggested(rd, args, park_tree, park_geoms):
+    t0 = time.time()
+    ways, edges0, _adj0, vpos = build_graph(rd)
+    print(f"graph: {len(vpos)} junctions, {len(edges0)} trail pieces", flush=True)
+    if not edges0:
+        return []
+    etree = STRtree([LineString([(lon, lat) for lat, lon in e[2]]) for e in edges0])
+
+    def locate(lat, lon, max_m):
+        """Nearest point on the trail network: (edge, coordinate index) or None."""
+        idx = etree.query_nearest(Point(lon, lat), max_distance=max_m / 111000.0 * 1.5)
+        if len(idx) == 0:
+            return None
+        e = int(idx[0])
+        seg = edges0[e][2]
+        i = min(range(len(seg)), key=lambda k: hav(lat, lon, seg[k][0], seg[k][1]))
+        if hav(lat, lon, seg[i][0], seg[i][1]) > max_m:
+            return None
+        return (e, i)
+
+    def in_park(lat, lon):
+        if park_tree is None:
+            return False
+        return len(park_tree.query(Point(lon, lat), predicate="intersects")) > 0
+
+    # Where trailheads and destinations touch the trail network
+    th_hits = []
+    for lat, lon, name, kind in rd.trailheads:
+        if kind != "trailhead" and not in_park(lat, lon):
+            continue  # parking counts only in parks / protected areas
+        loc = locate(lat, lon, 300)
+        if loc:
+            th_hits.append((loc, name, kind))
+    dest_hits = []
+    for kind, name, lat, lon, extra in rd.points:
+        if kind not in DEST_WEIGHT or (kind == "peak" and not name):
+            continue
+        loc = locate(lat, lon, 150)
+        if loc:
+            pr = DEST_WEIGHT[kind] + (0.5 if name else 0)
+            if kind == "peak":
+                try:
+                    pr += min(float(extra.split()[0]) / 2000.0, 1.5)
+                except Exception:
+                    pass
+            dest_hits.append((loc, (pr, kind, name, extra)))
+
+    # Split trail pieces where they are touched, so those spots become junctions.
+    cuts = defaultdict(set)
+    for (e, i), *_ in th_hits + dest_hits:
+        cuts[e].add(i)
+    edges = []
+    adj = defaultdict(list)
+    vertex_at = {}  # (edge0, index) -> vertex id
+    for e0, (u, v, seg, L, wid) in enumerate(edges0):
+        points = sorted({0, len(seg) - 1} | cuts.get(e0, set()))
+        ids = []
+        for i in points:
+            vid = u if i == 0 else v if i == len(seg) - 1 else ("s", e0, i)
+            vertex_at[(e0, i)] = vid
+            vpos[vid] = seg[i]
+            ids.append(vid)
+        for (a, va), (b, vb) in zip(zip(points, ids), list(zip(points, ids))[1:]):
+            piece = seg[a:b + 1]
+            pl = line_len(piece)
+            if len(piece) < 2 or pl <= 0:
+                continue
+            k = len(edges)
+            edges.append((va, vb, piece, pl, wid))
+            adj[va].append((k, vb))
+            adj[vb].append((k, va))
+
+    starts = {}
+    for (loc, name, kind) in th_hits:
+        sv = vertex_at[loc]
+        if sv not in starts or (name and not starts[sv][0]):
+            starts[sv] = (name, kind)
+    dests = defaultdict(list)
+    for loc, item in dest_hits:
+        dests[vertex_at[loc]].append(item)
+    print(f"trailheads: {len(starts)}, destinations: {len(dests)}", flush=True)
+
+    def way_name(e):
+        return ways[edges[e][4]][0].get("name", "")
+
+    cands = []
+    for s_v, (s_name, s_kind) in starts.items():
+        dist, prev = dijkstra(adj, edges, s_v, args.route_max_km * 1000)
+        options = []
+        for d_v, items in dests.items():
+            d = dist.get(d_v)
+            if d is None or d < 700 or d > args.route_max_km * 1000:
+                continue
+            best = max(items)
+            options.append((best[0], d, d_v, best))
+        options.sort(key=lambda o: (-o[0], o[1]))
+        for pr, d, d_v, (_, kind, name, extra) in options[:3]:
+            steps = walk(prev, s_v, d_v)
+            if not steps:
+                continue
+            e1 = [e for _, e in steps]
+            set1 = set(e1)
+            # Try to come back a different way.
+            pen = {e: 8.0 for e in e1}
+            dist2, prev2 = dijkstra(adj, edges, d_v, d * 3 + 2000, pen)
+            back = walk(prev2, d_v, s_v)
+            is_loop = False
+            if back:
+                L2 = sum(edges[e][3] for _, e in back)
+                overlap = sum(edges[e][3] for _, e in back if e in set1)
+                if L2 <= 2.0 * d and overlap / max(L2, 1) < 0.3:
+                    is_loop = True
+            steps_all = steps + (back if is_loop else [])
+            all_edges = [e for _, e in steps_all]
+            # Names of the trails used, in order, weighted by length
+            share = defaultdict(float)
+            order = []
+            for e in all_edges:
+                n = way_name(e)
+                if n:
+                    share[n] += edges[e][3]
+                    if n not in order:
+                        order.append(n)
+            total = sum(edges[e][3] for e in all_edges)
+            dominant = max(share, key=share.get) if share else ""
+            if not is_loop and dominant and share[dominant] >= 0.9 * total:
+                continue  # just a stretch of one named trail, which is already listed
+            label = name or {"viewpoint": "Viewpoint", "waterfall": "Waterfall", "hot_spring": "Hot Spring",
+                              "arch": "Rock Arch", "cave": "Cave"}.get(kind, "Summit")
+            if is_loop:
+                title = f"{label} Loop"
+            elif dominant and dominant.lower() not in label.lower() and label.lower() not in dominant.lower():
+                title = f"{label} via {dominant}"
+            else:
+                title = dominant or f"{label} Trail"
+            coords = path_coords(edges, steps_all)
+            if len(coords) < 2:
+                continue
+            cands.append(dict(
+                prio=pr + (0.8 if is_loop else 0), edges=set(all_edges),
+                weights={e: edges[e][3] for e in all_edges},
+                cand=dict(
+                    name=title, kind="suggested", pieces=[coords],
+                    way_tags=[ways[edges[e][4]][0] for e in dict.fromkeys(all_edges)],
+                    rel_tags={}, osm=",".join(f"w{edges[e][4]}" for e in list(dict.fromkeys(all_edges))[:20]),
+                    fixed_start=True, via=order[:6], dest=(kind, name, extra),
+                ),
+            ))
+    # Keep the best route for each distinct path (drop near-duplicates).
+    cands.sort(key=lambda c: -c["prio"])
+    kept = []
+    by_edge = defaultdict(list)
+    for c in cands:
+        dup = False
+        seen_k = set()
+        for e in c["edges"]:
+            for k in by_edge[e]:
+                if k in seen_k:
+                    continue
+                seen_k.add(k)
+                other = kept[k]
+                inter = sum(c["weights"][x] for x in c["edges"] & other["edges"])
+                union = sum(c["weights"].values()) + sum(other["weights"].values()) - inter
+                if union > 0 and inter / union > 0.6:
+                    dup = True
+                    break
+            if dup:
+                break
+        if dup:
+            continue
+        k = len(kept)
+        kept.append(c)
+        for e in c["edges"]:
+            by_edge[e].append(k)
+    print(f"suggested routes: {len(kept)} (from {len(cands)} candidates, {time.time()-t0:.0f}s)", flush=True)
+    return [c["cand"] for c in kept]
+
+
 def build(args):
     t0 = time.time()
     rd = Reader()
@@ -393,7 +652,7 @@ def build(args):
 
     # 2. Named trail ways, grouped by name and touching ends
     by_name = defaultdict(list)
-    for wid, (tags, coords) in rd.ways.items():
+    for wid, (tags, coords, _refs) in rd.ways.items():
         n = tags.get("name")
         if n and is_trail_way(tags):
             by_name[norm_name(n)].append(wid)
@@ -444,6 +703,11 @@ def build(args):
                 name=name, kind="trail", pieces=pieces, way_tags=tags_list, rel_tags={},
                 osm=",".join(f"w{w}" for w in sorted(members)[:20]),
             ))
+    # 3. Suggested routes from trailheads to destinations (loops where the trails allow)
+    if not args.no_suggested:
+        sp_geoms = [p for _, _, p, _, _ in rd.parks]
+        sp_tree = STRtree(sp_geoms) if sp_geoms else None
+        candidates += build_suggested(rd, args, sp_tree, sp_geoms)
     print(f"candidates: {len(candidates)}", flush=True)
 
     # 3. Geometry: chain, resample, terrain
@@ -504,7 +768,7 @@ def build(args):
         max_ele = max(profile) if profile else None
         min_ele = min(profile) if profile else None
         # Trailhead: the lower end is usually where people start, unless parking says otherwise
-        if profile and rtype != "loop" and profile[-1] < profile[0] - 20:
+        if profile and rtype != "loop" and not c.get("fixed_start") and profile[-1] < profile[0] - 20:
             main = main[::-1]
             profile = profile[::-1]
             start, end = main[0], main[-1]
@@ -594,7 +858,7 @@ def build(args):
             r_deg = 400.0 / 111000.0
             near_start = len(parking_tree.query(Point(start[1], start[0]).buffer(r_deg)))
             near_end = len(parking_tree.query(Point(end[1], end[0]).buffer(r_deg)))
-            if near_end and not near_start and rtype != "loop":
+            if near_end and not near_start and rtype != "loop" and not c.get("fixed_start"):
                 main = main[::-1]
                 profile = profile[::-1]
                 start, end = main[0], main[-1]
@@ -619,7 +883,8 @@ def build(args):
 
         score = (math.log1p(trip / 1000.0) + 0.6 * len(feats) + (1.5 if c["kind"] == "route" else 0)
                  + (2.0 if wikipedia or wikidata else 0) + (0.5 if park else 0) + (0.4 if parking else 0)
-                 + (0.3 if rtype == "loop" else 0))
+                 + (0.3 if rtype == "loop" else 0)
+                 + (1.2 + (0.6 if rtype == "loop" else 0) if c["kind"] == "suggested" else 0))
 
         pieces_out = [main] + c["rest"]
         poly = ";".join(encode_polyline(simplify(p)) for p in pieces_out if len(p) > 1)
@@ -640,7 +905,7 @@ def build(args):
             near=json.dumps(sorted(set(near_names))[:6]) if near_names else "",
             wikipedia=wikipedia, wikidata=wikidata, website=website, description=description[:500],
             park_wikipedia=park_wp, park_wikidata=park_wd,
-            osm=c["osm"], score=round(score, 3),
+            osm=c["osm"], score=round(score, 3), via=json.dumps(c.get("via", [])) if c.get("via") else "",
             poly=poly, profile=prof, step_m=round(c["step"], 2),
         ))
     print(f"trails: {len(out_rows)}  ({time.time()-t0:.0f}s)", flush=True)
@@ -678,7 +943,7 @@ def write_db(args, rows, parks):
             difficulty INTEGER, features TEXT, dogs TEXT, wheelchair INTEGER, paved INTEGER, kid INTEGER,
             activities TEXT, sac TEXT, parking INTEGER, peaks TEXT, near TEXT,
             wikipedia TEXT, wikidata TEXT, website TEXT, description TEXT,
-            park_wikipedia TEXT, park_wikidata TEXT, osm TEXT, score REAL);
+            park_wikipedia TEXT, park_wikidata TEXT, osm TEXT, score REAL, via TEXT);
         CREATE TABLE trail_geom (id INTEGER PRIMARY KEY, poly TEXT, profile TEXT, step_m REAL);
         CREATE TABLE parks (id INTEGER PRIMARY KEY, name TEXT, name_lc TEXT, kind TEXT, c_lat REAL, c_lon REAL,
             min_lat REAL, min_lon REAL, max_lat REAL, max_lon REAL, trails INTEGER, wikipedia TEXT, wikidata TEXT);
@@ -719,4 +984,6 @@ if __name__ == "__main__":
     ap.add_argument("--max-route-km", type=float, default=60)
     ap.add_argument("--terrain-cache", default="terrain-cache")
     ap.add_argument("--mock-terrain", action="store_true")
+    ap.add_argument("--route-max-km", type=float, default=11, help="max one-way distance to a destination")
+    ap.add_argument("--no-suggested", action="store_true")
     build(ap.parse_args())

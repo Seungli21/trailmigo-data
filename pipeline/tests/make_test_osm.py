@@ -37,6 +37,7 @@ e = [d[-1]] + line([(34.1195, -118.295), (34.1210, -118.2945)])
 way(d, highway="path", name="Canyon Trail", sac_scale="mountain_hiking")
 way(e, highway="path", name="Canyon Trail")
 node(34.1182, -118.2958, natural="waterfall", name="Hidden Falls")
+way([d[0], a[-1]], highway="path")  # connector from the canyon trailhead to the loop
 node(34.1121, -118.3003, amenity="parking")
 
 # Route relation over two unnamed ways

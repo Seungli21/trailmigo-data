@@ -13,8 +13,11 @@ print("with wikipedia/wikidata:", q("select count(*) from trails where wikipedia
 print("\ntop 25 by score:")
 for r in q("select name, park, route_type, round(trip_m/1609.344,1), round(gain_m*3.28084), difficulty, features from trails order by score desc limit 25"):
     print("  ", r)
+print("\nsuggested routes, top 25:")
+for r in q("select name, park, route_type, round(trip_m/1609.344,1), round(gain_m*3.28084), difficulty, via from trails where kind='suggested' order by score desc limit 25"):
+    print("  ", r)
 print("\nspot checks:")
-for name in ["mount hollywood", "bridge to nowhere", "mount baldy", "cucamonga", "eaton canyon", "sandstone peak",
+for name in ["sandstone", "mishe mokwa", "switzer", "sturtevant", "eaton canyon falls", "mount hollywood", "bridge to nowhere", "mount baldy", "cucamonga", "eaton canyon", "sandstone peak",
              "potato chip", "torrey pines", "san jacinto", "cactus to clouds", "runyon", "echo mountain", "mount wilson"]:
     for r in q("select name, park, route_type, round(trip_m/1609.344,1), round(gain_m*3.28084), difficulty, features "
                "from trails where name_lc like ? order by score desc limit 3", f"%{name}%"):
