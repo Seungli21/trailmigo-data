@@ -1,6 +1,6 @@
-# Trailmigo trail data
+# Ridgetrove trail data
 
-Pre-built trail databases ("packs") for the [Trailmigo](https://github.com/Seungli21) hiking app.
+Pre-built trail databases ("packs") for the Ridgetrove hiking app (ridgetrove.com).
 Each pack is a SQLite file listing every named trail and hiking route in a region, with
 length, route type, elevation gain and profile, difficulty, nearby features, park and trailhead info,
 so the app can search and filter trails instantly and offline.

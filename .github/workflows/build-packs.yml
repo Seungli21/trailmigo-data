@@ -1,7 +1,15 @@
 name: Build trail packs
 
+# One job per region (in parallel), then one job that publishes them all to the "packs" release.
+# Run by hand with a comma-separated list of region ids to rebuild only those (blank = all).
+
 on:
   workflow_dispatch:
+    inputs:
+      regions:
+        description: "Region ids to build, comma-separated (blank = all in pipeline/regions.json)"
+        required: false
+        default: ""
   push:
     branches: [main]
     paths: ['pipeline/**', '.github/workflows/build-packs.yml']
@@ -12,9 +20,32 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: m
+        env:
+          WANT: ${{ github.event.inputs.regions }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          want = {w.strip() for w in os.environ.get("WANT", "").split(",") if w.strip()}
+          rs = [r for r in json.load(open("pipeline/regions.json")) if not want or r["id"] in want]
+          print("matrix=" + json.dumps({"include": rs}))
+          PY
+
+  build:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    name: build ${{ matrix.id }}
     steps:
       - uses: actions/checkout@v4
 
@@ -27,51 +58,68 @@ jobs:
         uses: actions/cache@v4
         with:
           path: terrain-cache
-          key: terrain-z12-${{ github.run_id }}
-          restore-keys: terrain-z12-
+          key: terrain-z12-${{ matrix.id }}-${{ github.run_id }}
+          restore-keys: |
+            terrain-z12-${{ matrix.id }}-
+            terrain-z12-
 
-      - name: Build packs
+      - name: Build pack
         run: |
           set -o pipefail
           mkdir -p out
-          python3 - <<'PY' > regions.txt
-          import json
-          for r in json.load(open("pipeline/regions.json")):
-              print(r["id"], r["source"], r["name"], sep="\t")
-          PY
-          while IFS=$'\t' read -r id src name; do
-            echo "::group::$name"
-            curl -sSL --retry 3 -o "$id.osm.pbf" "$src"
-            ls -la "$id.osm.pbf"
-            osmium tags-filter "$id.osm.pbf" \
-              w/highway=path,footway,bridleway,track,steps \
-              r/route=hiking,foot,running \
-              nwr/natural=peak,volcano,waterfall,water,beach,hot_spring,geyser,cave_entrance,spring,arch \
-              n/waterway=waterfall w/waterway=river n/tourism=viewpoint \
-              nwr/amenity=parking n/highway=trailhead \
-              nwr/boundary=protected_area,national_park nwr/leisure=nature_reserve,park n/historic \
-              -o "$id.filtered.osm.pbf" --overwrite
-            rm "$id.osm.pbf"
-            python3 pipeline/build_pack.py "$id.filtered.osm.pbf" "out/$id.db" --region-id "$id" --region-name "$name" 2>&1 | tee -a build-log.txt
-            python3 pipeline/report.py "out/$id.db" 2>&1 | tee -a build-log.txt
-            gzip -9 -k "out/$id.db"
-            echo "::endgroup::"
-          done < regions.txt
+          id="${{ matrix.id }}"
+          curl -sSL --retry 3 -o "$id.osm.pbf" "${{ matrix.source }}"
+          ls -la "$id.osm.pbf"
+          osmium tags-filter "$id.osm.pbf" \
+            w/highway=path,footway,bridleway,track,steps \
+            r/route=hiking,foot,running \
+            nwr/natural=peak,volcano,waterfall,water,beach,hot_spring,geyser,cave_entrance,spring,arch \
+            n/waterway=waterfall w/waterway=river n/tourism=viewpoint \
+            nwr/amenity=parking n/highway=trailhead \
+            nwr/boundary=protected_area,national_park nwr/leisure=nature_reserve,park n/historic \
+            -o "$id.filtered.osm.pbf" --overwrite
+          rm "$id.osm.pbf"
+          python3 pipeline/build_pack.py "$id.filtered.osm.pbf" "out/$id.db" --region-id "$id" --region-name "${{ matrix.name }}" 2>&1 | tee "out/$id.log.txt"
+          python3 pipeline/report.py "out/$id.db" 2>&1 | tee -a "out/$id.log.txt"
+          gzip -9 -k "out/$id.db"
+          ls -la out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pack-${{ matrix.id }}
+          path: out/
+          retention-days: 3
+
+  publish:
+    needs: build
+    if: always() && needs.build.result != 'cancelled'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pack-*
+          path: out
+          merge-multiple: true
 
       - name: Publish release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          ls -la out
           base="https://github.com/${{ github.repository }}/releases/download/packs"
-          gh release view packs > /dev/null 2>&1 || gh release create packs --title "Trail packs" --notes "Trailmigo trail databases. Data © OpenStreetMap contributors (ODbL). Elevation: Mapzen / AWS Open Data."
+          gh release view packs > /dev/null 2>&1 || gh release create packs --title "Trail packs" --notes "Ridgetrove trail databases. Data © OpenStreetMap contributors (ODbL). Elevation: Mapzen / AWS Open Data."
           gh release download packs -p packs.json -O old-packs.json 2>/dev/null || true
           python3 pipeline/make_manifest.py out "$base" old-packs.json
-          gh release upload packs out/*.db.gz out/packs.json --clobber
+          ls out/*.db.gz > /dev/null 2>&1 && gh release upload packs out/*.db.gz --clobber
+          gh release upload packs out/packs.json --clobber
 
       - name: Save build log
         if: always()
         run: |
-          mkdir -p logs && cp build-log.txt logs/ 2>/dev/null || true
+          mkdir -p logs
+          cat out/*.log.txt > logs/build-log.txt 2>/dev/null || true
           cp out/packs.json logs/ 2>/dev/null || true
           cd logs
           git init -q -b logs

@@ -1,7 +1,11 @@
 [
-  {
-    "id": "socal",
-    "name": "Southern California",
-    "source": "https://download.geofabrik.de/north-america/us/california/socal-latest.osm.pbf"
-  }
+  { "id": "socal", "name": "Southern California", "source": "https://download.geofabrik.de/north-america/us/california/socal-latest.osm.pbf" },
+  { "id": "norcal", "name": "Northern California & Sierra Nevada", "source": "https://download.geofabrik.de/north-america/us/california/norcal-latest.osm.pbf" },
+  { "id": "nevada", "name": "Nevada", "source": "https://download.geofabrik.de/north-america/us/nevada-latest.osm.pbf" },
+  { "id": "arizona", "name": "Arizona", "source": "https://download.geofabrik.de/north-america/us/arizona-latest.osm.pbf" },
+  { "id": "utah", "name": "Utah", "source": "https://download.geofabrik.de/north-america/us/utah-latest.osm.pbf" },
+  { "id": "new-mexico", "name": "New Mexico", "source": "https://download.geofabrik.de/north-america/us/new-mexico-latest.osm.pbf" },
+  { "id": "colorado", "name": "Colorado", "source": "https://download.geofabrik.de/north-america/us/colorado-latest.osm.pbf" },
+  { "id": "oregon", "name": "Oregon", "source": "https://download.geofabrik.de/north-america/us/oregon-latest.osm.pbf" },
+  { "id": "washington", "name": "Washington", "source": "https://download.geofabrik.de/north-america/us/washington-latest.osm.pbf" }
 ]
