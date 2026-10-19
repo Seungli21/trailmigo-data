@@ -1,0 +1,801 @@
+reading arizona.filtered.osm.pbf
+read: 389600 trail ways, 658 routes, 17164 points, 2485 parks, 8399 lakes, 39319 parking  (40s)
+graph: 300608 junctions, 318256 trail pieces
+trailheads: 2514, destinations: 1099
+suggested routes: 674 (from 1617 candidates, 21s)
+candidates: 5283
+terrain: fetching 1101 tiles
+terrain: done
+trails: 4498  (140s)
+done in 141s
+trails: 4498  parks: 233
+by kind: [('route', 608), ('suggested', 390), ('trail', 3500)]
+by route type: [('loop', 386), ('out_back', 4070), ('point', 42)]
+by difficulty: [(1, 2542), (2, 785), (3, 451), (4, 720)]
+missing elevation: 0
+  feature waterfall: 98
+  feature peak: 557
+  feature views: 1002
+  feature lake: 555
+  feature river: 317
+  feature beach: 0
+  feature hot_spring: 2
+  feature cave: 61
+  feature historic: 192
+with wikipedia/wikidata: 44
+
+top 25 by score:
+   ('Arizona Trail Pusch Ridge Wilderness Bypass', '', 'out_back', 34.5, 9094.0, 4, 'historic,lake,peak,river,spring,views')
+   ('Hayduke Trail #11', 'Grand Canyon National Park', 'out_back', 72.9, 8733.0, 4, 'historic,peak,river,spring,views,waterfall')
+   ('Chimney Rock Loop', 'Coconino National Forest', 'loop', 21.2, 2244.0, 4, 'cave,historic,lake,peak,river,views')
+   ('Nankoweap Trail', 'Grand Canyon National Park', 'out_back', 24.9, 7656.0, 4, 'historic,spring,waterfall')
+   ('Thunder River Trail', 'Grand Canyon National Park', 'out_back', 24.2, 5632.0, 4, 'cave,spring,waterfall')
+   ('South Kaibab Trail', 'Grand Canyon National Park', 'out_back', 13.0, 4891.0, 4, 'historic,peak,river,views')
+   ('Havasupai Trail', '', 'out_back', 19.3, 2286.0, 4, 'river,spring,views,waterfall')
+   ('Grand Enchantment Trail Segment 10: Pinaleño Mountains', 'Mount Graham Wilderness Study Area', 'out_back', 46.6, 6311.0, 4, 'historic,peak,spring,views,waterfall')
+   ('Hermit Trail', 'Grand Canyon National Park', 'out_back', 17.2, 4815.0, 4, 'river,spring,views')
+   ('Escalante Route', 'Grand Canyon National Park', 'out_back', 22.8, 4518.0, 4, 'peak,river,views')
+   ('Grand Enchantment Trail Segment 1: Superstition Wilderness', 'Superstition Wilderness', 'out_back', 60.1, 9309.0, 4, 'historic,spring,views,waterfall')
+   ('Tanner Trail', 'Grand Canyon National Park', 'out_back', 13.9, 5335.0, 4, 'historic,peak,views')
+   ('North Bass Trail', 'Grand Canyon National Park', 'out_back', 23.8, 7398.0, 4, 'river,waterfall')
+   ('Rim Trail', 'Grand Canyon National Park', 'out_back', 19.4, 1148.0, 4, 'peak,views')
+   ('Ken Patrick Trail', 'Grand Canyon National Park', 'out_back', 18.6, 3099.0, 4, 'spring,views')
+   ('Royal Arch Route', 'Grand Canyon National Park', 'out_back', 28.0, 5689.0, 4, 'river,spring')
+   ('KA Hill Loop', 'Kaibab National Forest', 'loop', 11.4, 1130.0, 4, 'lake,peak,spring,views,waterfall')
+   ('Deer Creek Trail', 'Grand Canyon National Park', 'out_back', 6.3, 1972.0, 4, 'river,spring,views,waterfall')
+   ('Waterfall Loop', 'Pusch Ridge Wilderness', 'loop', 18.2, 2880.0, 4, 'lake,river,spring,waterfall')
+   ('Brins Mesa Loop', 'Coconino National Forest', 'loop', 17.3, 2084.0, 4, 'cave,peak,river,views')
+   ('South Bass Trail', 'Grand Canyon National Park', 'out_back', 14.0, 4629.0, 4, 'river,spring')
+   ('South Canyon Trail', 'Grand Canyon National Park', 'out_back', 11.3, 2166.0, 4, 'cave,river,spring')
+   ('Workman Creek Falls Loop', 'Tonto National Forest', 'loop', 16.9, 4352.0, 4, 'peak,spring,views,waterfall')
+   ('South Fork Trail #243', 'Chiricahua Wilderness', 'out_back', 27.6, 7383.0, 4, 'lake,spring,views,waterfall')
+   ('Los Burros Trail', 'Apache-Sitgreaves National Forests', 'out_back', 26.9, 2129.0, 4, 'lake,peak,spring,views')
+
+suggested routes, top 25:
+   ('Chimney Rock Loop', 'Coconino National Forest', 'loop', 21.2, 2244.0, 4, '["Centennial", "Girdner", "Stirrup", "Chuckwagon Trail", "Lizard Head Trail", "Summit Route"]')
+   ('KA Hill Loop', 'Kaibab National Forest', 'loop', 11.4, 1130.0, 4, '["Sycamore Rim Trail"]')
+   ('Waterfall Loop', 'Pusch Ridge Wilderness', 'loop', 18.2, 2880.0, 4, '["Bear Canyon Trail #29", "East Fork Trail #24A", "Sabino Canyon Trail #23", "Phoneline Trail #27", "Phoneline Link Trail #27A", "Creek Trail #52"]')
+   ('Brins Mesa Loop', 'Coconino National Forest', 'loop', 17.3, 2084.0, 4, '["Arizona Cypress Trail", "Snake Trail", "Girdner", "Chuckwagon Trail", "Dry Creek Road", "Brins Mesa Trail"]')
+   ('Workman Creek Falls Loop', 'Tonto National Forest', 'loop', 16.9, 4352.0, 4, '["Parker Creek Trail 160", "Rim Trail 139", "FR 487", "Abby\'s Way 151", "Moody Point Trail 140"]')
+   ('Coffeepot Rock Loop', 'Coconino National Forest', 'loop', 14.4, 1687.0, 4, '["Arizona Cypress Trail", "Snake Trail", "Girdner", "Chuckwagon Trail", "Lizard Head Trail", "Summit Route"]')
+   ('Humphreys Peak Loop', 'Kachina Peaks Wilderness', 'loop', 14.2, 4681.0, 4, '["Bear Jaw Trail", "Abineau Trail", "Humphreys Peak Trail", "Weatherford Trail", "Inner Basin Trail", "Waterline Trail"]')
+   ('Wildcat Hill Loop', 'Tonto National Forest', 'loop', 13.9, 1375.0, 4, '["Blue Wash Trail", "Camp Creek Trail", "Maricopa Trail", "Maricopa Trail (BR to Bartlett Lake Road)", "2091", "Trail #2090"]')
+   ('Superstition Peak Loop', 'Superstition Wilderness', 'loop', 13.1, 3586.0, 4, '["Carney Springs Trail", "Superstition Ridgeline Trail", "Superstiton Peak Trail", "Hieroglyphic Trail", "Hieroglyphic Trail #101", "Lost Goldmine Trail"]')
+   ('Hub Point Loop', 'Apache-Sitgreaves National Forests', 'loop', 12.7, 1299.0, 4, '["Jupiter Ridge Trail 640", "General Crook Connector Trail"]')
+   ('Pierce Mountain Loop', 'Apache-Sitgreaves National Forests', 'loop', 12.3, 1120.0, 4, '["Trail", "Los Burros Shortcut", "Los Burros Trail #631"]')
+   ('Hot Spring Loop', '', 'loop', 5.8, 1230.0, 3, '["White Rock Canyon Trail", "Arizona Hot Spring Hiking Trail", "Hot Spring Canyon Trail"]')
+   ("O'Neill Butte via Tonto Trail", 'Grand Canyon National Park', 'out_back', 13.2, 2473.0, 4, '["Bright Angel Trail", "Tonto Trail", "South Kaibab Trail"]')
+   ('Devils Head Loop', 'Coconino National Forest', 'loop', 11.7, 3259.0, 4, '["Sandy Seep Trail", "Arizona Trail-Sandy Seep", "Arizona Trail-Mount Elden", "Fatmans Loop Trail", "Elden Lookout Trail", "Sunset Trail"]')
+   ('Little Elden Mountain Loop', 'Coconino National Forest', 'loop', 11.2, 2709.0, 4, '["Sandy Seep Trail", "Arizona Trail-Sandy Seep", "Arizona Trail-Mount Elden", "Christmas Tree Trail", "El Viejo Corazon Trail", "New Heart Trail"]')
+   ('Lons Point Loop', 'Apache-Sitgreaves National Forests', 'loop', 10.3, 1013.0, 3, '["Jupiter Ridge Trail 640", "General Crook Connector Trail"]')
+   ('Superstition Peak via Superstition Ridgeline Trail', 'Superstition Wilderness', 'out_back', 13.7, 5521.0, 4, '["Treasure Loop #56", "Prospector\'s View #57", "Siphon Draw Trail #53", "Siphon Draw Trail", "Superstition Ridgeline Trail", "Superstiton Peak Trail"]')
+   ('Elden Mountain Loop', 'Coconino National Forest', 'loop', 9.7, 2515.0, 4, '["Sandy Seep Trail", "Arizona Trail-Sandy Seep", "Arizona Trail-Mount Elden", "Fatmans Loop Trail", "Elden Lookout Trail", "Elden Lookout Road"]')
+   ('The Cockscomb Loop', 'Coconino National Forest', 'loop', 9.4, 1050.0, 3, '["Centennial", "Girdner", "Axis Trail", "FS 9513", "Last Frontier", "Outer Limits"]')
+   ('Blue Ridge Mountain Loop', 'Apache-Sitgreaves National Forests', 'loop', 9.2, 788.0, 3, '["Blue Ridge Trail"]')
+   ('Battleship Mountain Loop', 'Superstition Wilderness', 'loop', 16.7, 2454.0, 4, '["Hackberry Spring Trail", "Second Water Trail #236", "Boulder Trail", "Battleship Mountain scramble", "Dutchman Trail #104"]')
+   ('Black Top Mesa Loop', 'Superstition Wilderness', 'loop', 16.0, 2355.0, 4, '["Dutchman Trail #104", "Bull Pass Trail #129", "Black Top Mesa Trail", "Cavalry Trail #239", "Boulder Trail", "Second Water Trail #236"]')
+   ("Tom's Thumb Loop", 'McDowell Sonoran Preserve', 'loop', 15.9, 3088.0, 4, '["Dixie Mine Trail", "Thompson Peak Road", "Prospector", "Bell Pass Trail", "Windgate Pass", "East End Trail"]')
+   ('Overlook Loop', 'South Mountain Preserve', 'loop', 15.6, 2672.0, 4, '["Mormon Trail", "National Trail", "Telegraph Pass Trail", "Desert Classic", "DC-Ray Connector", "Guadalupe Perimeter"]')
+   ('The Tipoff via South Kaibab Trail', 'Grand Canyon National Park', 'out_back', 9.1, 3346.0, 4, '["South Kaibab Trail"]')
+
+spot checks:
+   ('Switzer Canyon Trail', 'McPherson Park', 'out_back', 0.8, 103.0, 1, '')
+
+largest parks: [('Coconino National Forest', 639), ('Tonto National Forest', 314), ('Apache-Sitgreaves National Forests', 293), ('Prescott National Forest', 239), ('McDowell Sonoran Preserve', 137), ('Grand Canyon National Park', 103), ('South Mountain Preserve', 88), ('Superstition Wilderness', 82), ('Saguaro National Park - Rincon Mountain District', 70), ('Tucson Mountain Park', 61), ('Red Rock-Secret Mountain Wilderness', 59), ('Chiricahua Wilderness', 58), ('Saguaro National Park - Tucson Mountain District', 50), ('Blue Range Primitive Area', 45), ('Phoenix Mountains Preserve', 42)]
+reading colorado.filtered.osm.pbf
+read: 499994 trail ways, 179 routes, 7804 points, 3299 parks, 4527 lakes, 45472 parking  (60s)
+graph: 344237 junctions, 321374 trail pieces
+trailheads: 4559, destinations: 1618
+suggested routes: 1167 (from 2814 candidates, 23s)
+candidates: 8954
+terrain: fetching 1579 tiles
+terrain: done
+trails: 8031  (185s)
+done in 185s
+trails: 8031  parks: 376
+by kind: [('route', 146), ('suggested', 764), ('trail', 7121)]
+by route type: [('loop', 519), ('out_back', 7510), ('point', 2)]
+by difficulty: [(1, 4200), (2, 1524), (3, 892), (4, 1415)]
+missing elevation: 0
+  feature waterfall: 330
+  feature peak: 736
+  feature views: 1546
+  feature lake: 1284
+  feature river: 777
+  feature beach: 8
+  feature hot_spring: 9
+  feature cave: 10
+  feature historic: 275
+with wikipedia/wikidata: 55
+
+top 25 by score:
+   ('Fern Falls Loop', 'Rocky Mountain Wilderness', 'loop', 18.6, 3425.0, 4, 'lake,river,spring,views,waterfall')
+   ('Lions Head Loop', 'Staunton State Park', 'loop', 17.4, 3149.0, 4, 'historic,lake,peak,views,waterfall')
+   ('Argentine Central Railroad Grade Trail', 'Arapaho National Forest', 'out_back', 26.1, 2772.0, 4, 'historic,views')
+   ('CDT in-xx Misc Old Route Alternates', 'Gunnison National Forest', 'out_back', 56.0, 4303.0, 4, 'lake,peak,river,views')
+   ('Rawah Trail', 'Rawah Wilderness', 'out_back', 26.3, 5146.0, 4, 'lake,river,spring,views,waterfall')
+   ('Viewpoint Loop', 'Arapaho National Forest', 'loop', 11.4, 2254.0, 4, 'historic,views')
+   ('Peak 9 Loop', 'White River National Forest', 'loop', 13.6, 4118.0, 4, 'historic,lake,peak,views,waterfall')
+   ('Viewpoint Loop', 'State Forest State Park', 'loop', 12.1, 3040.0, 4, 'historic,lake,peak,spring,views')
+   ('Aspen Mountain Loop', '', 'loop', 8.5, 3380.0, 4, 'historic,peak,views')
+   ('Alberta Falls Loop', 'Rocky Mountain Wilderness', 'loop', 11.6, 1968.0, 4, 'lake,river,spring,views,waterfall')
+   ('Jasper Peak Loop', 'Roosevelt National Forest', 'loop', 19.7, 5580.0, 4, 'lake,peak,views,waterfall')
+   ('Ballard Mountain Loop', 'Uncompahgre National Forest', 'loop', 10.4, 5234.0, 4, 'lake,peak,river,views,waterfall')
+   ('Denver Orbital Trail - Segment 1', 'Lookout Mountain Preserve and Nature Center', 'out_back', 19.3, 3904.0, 4, 'historic,lake,peak,river,views')
+   ('Ute Rock Loop', '', 'loop', 6.9, 2867.0, 4, 'historic,lake,views')
+   ('Longs Peak Trail', 'Rocky Mountain Wilderness', 'out_back', 13.7, 5065.0, 4, 'peak,views')
+   ('Denver Orbital Trail - Segment 2', 'Matthews/Winters Park', 'out_back', 12.7, 1377.0, 4, 'historic,views')
+   ('Brockover Mesa Loop', 'San Juan National Forest', 'loop', 14.8, 1124.0, 4, 'lake,peak,river,views')
+   ('Fern Lake Trail', 'Rocky Mountain Wilderness', 'out_back', 14.7, 3355.0, 4, 'lake,river,spring,views,waterfall')
+   ('Beacon Peak Loop', 'James Peak Protection Area', 'loop', 14.7, 3067.0, 4, 'lake,peak,views,waterfall')
+   ('Mount Manitou Loop', 'Pike National Forest', 'loop', 6.1, 2824.0, 4, 'peak,views')
+   ('Mount Emmons Loop', 'Gunnison National Forest', 'loop', 13.8, 3814.0, 4, 'lake,peak,spring,views')
+   ('Indian Point Loop', 'Grand Mesa National Forest', 'loop', 25.3, 4681.0, 4, 'lake,peak,views')
+   ('Peak 8 Loop', 'White River National Forest', 'loop', 13.3, 3911.0, 4, 'historic,lake,peak,views')
+   ('The Citadel Loop', 'Rocky Mountain National Park', 'loop', 13.2, 3328.0, 4, 'lake,peak,views,waterfall')
+   ('Elk Falls Loop', 'Staunton State Park', 'loop', 12.7, 2158.0, 4, 'historic,lake,views,waterfall')
+
+suggested routes, top 25:
+   ('Fern Falls Loop', 'Rocky Mountain Wilderness', 'loop', 18.6, 3425.0, 4, '["Friendship Trail", "Spring Trail", "Tuxedo Park YMCA Camp Trail", "Moraine Tuxedo Cutoff Trail", "South Lateral Moraine Trail", "Cub Lake Trail"]')
+   ('Lions Head Loop', 'Staunton State Park', 'loop', 17.4, 3149.0, 4, '["Horse Trail", "Mason Creek Trail", "Dines Meadow Trail", "Staunton Ranch Trail", "Bugling Elk Trail", "Lion\'s Back Trail"]')
+   ('Viewpoint Loop', 'Arapaho National Forest', 'loop', 11.4, 2254.0, 4, '["Leavenworth Creek Road", "Waldorf Wagon Spur Road", "Hist. Waldorf Wagon Road", "Waldorf Wagon Road", "Paines Ridge Road", "Historic Waldorf Wagon Road"]')
+   ('Peak 9 Loop', 'White River National Forest', 'loop', 13.6, 4118.0, 4, '["Spruce Creek Trail", "Wheeler Trail", "Crystal Lake Road", "Crystal Trail", "Spruce Creek Road"]')
+   ('Viewpoint Loop', 'State Forest State Park', 'loop', 12.1, 3040.0, 4, '["Seven Utes Trail", "Lake Agnes Trail", "Michigan Ditch Trail", "County Road 62"]')
+   ('Aspen Mountain Loop', '', 'loop', 8.5, 3380.0, 4, '["Ajax Trail", "Little Cloud AJax Connector", "Little Cloud", "Aspen Mountain Road", "Power of 1", "East Rim"]')
+   ('Alberta Falls Loop', 'Rocky Mountain Wilderness', 'loop', 11.6, 1968.0, 4, '["Bierstadt Moraine Trail", "Storm Pass Trail", "Boulder Brook Trail", "Glacier Creek Trail", "Glacier Gorge Trail", "Lake Haiyaha Trail"]')
+   ('Jasper Peak Loop', 'Roosevelt National Forest', 'loop', 19.7, 5580.0, 4, '["High Lonesome Trail", "Mount Jasper South Route", "Arapaho Pass Trail", "Diamond Lake Trail", "Devils Thumb Trail", "Devil\'s Thumb Trail"]')
+   ('Ballard Mountain Loop', 'Uncompahgre National Forest', 'loop', 10.4, 5234.0, 4, '["Fire Cracker Hill Trail", "Bear Creek", "Ballard Trail", "La Junta"]')
+   ('Ute Rock Loop', '', 'loop', 6.9, 2867.0, 4, '["Ajax Trail", "Aspen Mountain Road", "Ute Trail", "Loushin Road", "Power of 1", "Little Cloud"]')
+   ('Brockover Mesa Loop', 'San Juan National Forest', 'loop', 14.8, 1124.0, 4, '["Upper Rim Trail", "Newt Jack Trail", "Catamount Trail", "Park Ave Trail", "Turkey Springs Trail", "Circle T Atv Trail"]')
+   ('Beacon Peak Loop', 'James Peak Protection Area', 'loop', 14.7, 3067.0, 4, '["Rollins Pass Road", "Needle Eye Bypass Trail", "Boulder Wagon Road", "Rollins Pass Trail", "Rogers Pass Trail", "South Boulder Creek Trail"]')
+   ('Mount Manitou Loop', 'Pike National Forest', 'loop', 6.1, 2824.0, 4, '["The Incline", "Longs Ranch Road", "Barr Trail", "Northern Incline Return Trail;", "Path from Ruxton to base of Incline"]')
+   ('Mount Emmons Loop', 'Gunnison National Forest', 'loop', 13.8, 3814.0, 4, '["Woods Walk", "Mt. Emmons", "Gunsight Pass Road 585", "Daisy Pass Access Road", "Gunsight Pass Road Road", "Upper Lower"]')
+   ('Indian Point Loop', 'Grand Mesa National Forest', 'loop', 25.3, 4681.0, 4, '["Flowing Park Road", "Flowing Park", "Indian Point Trail", "Flowing Park Trail", "Indian Point Cutoff Trail", "Spring Camp Trail"]')
+   ('Peak 8 Loop', 'White River National Forest', 'loop', 13.3, 3911.0, 4, '["Crystal Lake Road", "Wheeler Trail", "Peak Eight Road", "Dwights", "Breakaway", "Swinger"]')
+   ('The Citadel Loop', 'Rocky Mountain National Park', 'loop', 13.2, 3328.0, 4, '["Cow Creek Trail", "Dark Mountain Trail", "Black Canyon Trail", "Pear Climbing Access", "Gem Lake Trail"]')
+   ('Elk Falls Loop', 'Staunton State Park', 'loop', 12.7, 2158.0, 4, '["Dines Meadow Trail", "Staunton Ranch Trail", "Bugling Elk Trail", "Lion\'s Back Trail", "Chimney Rock Trail", "Elk Falls Trail"]')
+   ('Two Tree Hill Loop', 'Boulder Open Space and Mountain Parks', 'loop', 11.8, 3667.0, 4, '["Mesa", "Mesa Trail", "Mesa Connector Trail", "Big Bluestem West Trail", "Lower Big Bluestem Trail", "Upper Big Bluestem Trail"]')
+   ('Mount Victoria Loop', 'Camp Hale - Continental Divide National Monument', 'loop', 19.7, 5483.0, 4, '["Olympian\'s Link", "Perimeter", "Sky Pilot", "Switchback", "Treasure Vault", "Jody\'s Loop"]')
+   ('Waterfall Loop', 'San Juan National Forest', 'loop', 19.1, 5686.0, 4, '["Rico-Silverton - Co.Trail Trail", "Rico-Silverton Trail", "Rico - Silverton Trail", "Graysill Trail", "Cascade Creek Trail", "Engine Creek Trail"]')
+   ('Redcloud Peak Loop', 'Redcloud Peak Wilderness Study Area', 'loop', 10.0, 4225.0, 4, '["Silver Creek Trail", "Sunshine Peak Climber\'s Route"]')
+   ('Wilson Peak Loop', 'Lizard Head Wilderness', 'loop', 18.5, 5539.0, 4, '["Rock of Ages Trail", "Rock of Ages Connection Trail", "Wilson Peak Southwest Ridge", "Lizard Head Trail", "Wilson Mesa Trail", "Wilson Mesa"]')
+   ('Panorama Point Loop', 'Corwina Park', 'loop', 7.9, 1400.0, 3, '["West Ridge Trail", "Meadow View Trail", "Bear Creek Trail", "Meadow View Loop", "Trail", "Panorama Point"]')
+   ('Mount Sneffels via Blue Lakes Trail #201', 'Mount Sneffels Wilderness', 'out_back', 13.0, 5535.0, 4, '["Blue Lakes Trail #201", "Blue Lakes Trail", "Mount Sneffels Trail"]')
+
+spot checks:
+   ('Switzerland Trail Colorado and North Western Rail Road', 'Roosevelt National Forest', 'out_back', 13.7, 949.0, 4, 'historic,views')
+   ('Knob Hill Overlook via Switzerland Trail Colorado and North Western Rail Road', 'Roosevelt National Forest', 'out_back', 1.7, 393.0, 1, 'views')
+   ('Switzerland Trail Colo. & North Western R. R.', 'Roosevelt National Forest', 'out_back', 4.0, 314.0, 2, '')
+
+largest parks: [('White River National Forest', 656), ('Roosevelt National Forest', 503), ('Pike National Forest', 426), ('San Juan National Forest', 354), ('Gunnison National Forest', 296), ('Uncompahgre National Forest', 286), ('Arapaho National Forest', 204), ('San Isabel National Forest', 201), ('Rocky Mountain Wilderness', 158), ('Colorado River Valley Field Office', 142), ('Rio Grande National Forest', 133), ('Boulder Open Space and Mountain Parks', 127), ('Weminuche Wilderness', 92), ('Grand Mesa National Forest', 91), ('McInnis Canyons National Conservation Area', 70)]
+reading nevada.filtered.osm.pbf
+read: 220472 trail ways, 75 routes, 16880 points, 990 parks, 568 lakes, 12015 parking  (34s)
+graph: 232995 junctions, 262914 trail pieces
+trailheads: 1000, destinations: 675
+suggested routes: 203 (from 473 candidates, 19s)
+candidates: 1671
+terrain: fetching 675 tiles
+terrain: done
+trails: 1476  (78s)
+done in 78s
+trails: 1476  parks: 79
+by kind: [('route', 57), ('suggested', 125), ('trail', 1294)]
+by route type: [('loop', 105), ('out_back', 1371)]
+by difficulty: [(1, 829), (2, 266), (3, 150), (4, 231)]
+missing elevation: 0
+  feature waterfall: 46
+  feature peak: 121
+  feature views: 249
+  feature lake: 98
+  feature river: 53
+  feature beach: 0
+  feature hot_spring: 0
+  feature cave: 39
+  feature historic: 53
+with wikipedia/wikidata: 2
+
+top 25 by score:
+   ('Ruby Crest National Recreation Trail', 'Ruby Mountains Wilderness', 'out_back', 65.3, 16290.0, 4, 'lake,peak,spring,views')
+   ('Turtlehead Peak Loop', 'La Madre Mountain Wilderness', 'loop', 13.4, 3727.0, 4, 'arch,historic,peak,spring,views,waterfall')
+   ('Charleston Peak Trail North Loop', 'Mount Charleston Wilderness', 'out_back', 20.3, 5742.0, 4, 'cave,peak,spring,views,waterfall')
+   ('Turtlehead Peak via Calico Hills Trail', 'Red Rock Canyon National Conservation Area', 'out_back', 10.9, 3799.0, 4, 'arch,historic,peak,spring,views,waterfall')
+   ('Firehouse Hill Loop', 'Red Rock Canyon National Conservation Area', 'loop', 12.7, 1567.0, 4, 'arch,peak,spring,views')
+   ('Mount Washington Loop', 'Great Basin National Park', 'loop', 12.6, 4448.0, 4, 'lake,peak,spring,views')
+   ('ADT - Nevada - S - Seg 6', 'Arc Dome Wilderness', 'out_back', 69.6, 6369.0, 4, 'river,spring')
+   ('Viewpoint Loop', 'Red Rock Canyon National Conservation Area', 'loop', 18.1, 2334.0, 4, 'peak,spring,views')
+   ('Charleston Peak Trail South Loop', 'Mount Charleston Wilderness', 'out_back', 16.8, 4854.0, 4, 'peak,spring,views,waterfall')
+   ('Peak 5983 Loop', 'Spring Mountains National Recreation Area', 'loop', 15.7, 2751.0, 4, 'peak,spring,views')
+   ('Bonanza Trail', 'Mount Charleston Wilderness', 'out_back', 25.7, 7045.0, 4, 'peak,spring,views')
+   ('Johnson Lake Outlook Loop', 'Great Basin National Park', 'loop', 13.6, 4044.0, 4, 'lake,spring,views')
+   ('Waterfall via Brokeback Mountain', 'Red Rock Canyon National Conservation Area', 'out_back', 9.3, 724.0, 3, 'arch,historic,spring,views,waterfall')
+   ('Waterfall Loop', 'North McCullough Wilderness', 'loop', 12.3, 1213.0, 4, 'peak,views,waterfall')
+   ('Chocolate Peak Loop', 'Mount Rose Wilderness', 'loop', 12.2, 3501.0, 4, 'lake,peak,views')
+   ('McClellan Peak Loop', '', 'loop', 16.0, 3668.0, 4, 'peak,spring,views')
+   ('Mount Scott Loop', '', 'loop', 15.2, 4170.0, 4, 'peak,spring,views')
+   ('Sugarloaf Loop', '', 'loop', 15.2, 4303.0, 4, 'peak,spring,views')
+   ('Mummy Mountain via Charleston Peak Trail North Loop', 'Mount Charleston Wilderness', 'out_back', 11.9, 4834.0, 4, 'cave,peak,spring,views')
+   ('Whiskey Peak Loop', 'Rainbow Mountain Wilderness', 'loop', 8.4, 1811.0, 4, 'peak,spring,views')
+   ('Red Top Mountain Loop', '', 'loop', 14.2, 2037.0, 4, 'peak,spring,views')
+   ('Rock Arch via White Rock Loop', 'Red Rock Canyon National Conservation Area', 'out_back', 11.1, 1593.0, 4, 'arch,historic,spring,views')
+   ('Old Spanish Trail', '', 'out_back', 30.2, 1155.0, 4, '')
+   ('Indecision Peak via East Face Gully', 'Red Rock Canyon National Conservation Area', 'out_back', 10.5, 3158.0, 4, 'peak,spring,views,waterfall')
+   ('Snow Valley Peak Loop', '', 'loop', 12.8, 2391.0, 4, 'lake,peak,views')
+
+suggested routes, top 25:
+   ('Turtlehead Peak Loop', 'La Madre Mountain Wilderness', 'loop', 13.4, 3727.0, 4, '["Calico Overlook Trail", "Calico Hills Trail", "Guardian Angel", "Calico Basin Trail", "Girl Scout Trail", "Ash Spring Trail"]')
+   ('Turtlehead Peak via Calico Hills Trail', 'Red Rock Canyon National Conservation Area', 'out_back', 10.9, 3799.0, 4, '["Calico Hills Trail", "Approach trail to The Black Corridor", "Guardian Angel", "Calico Basin Trail", "Girl Scout Trail", "Ash Spring Trail"]')
+   ('Firehouse Hill Loop', 'Red Rock Canyon National Conservation Area', 'loop', 12.7, 1567.0, 4, '["Calico Basin Trail", "Guardian Angel", "Calico Hills Trail", "Calico Causeway", "Santeria D.H.", "Tunneling into Red Rock"]')
+   ('Mount Washington Loop', 'Great Basin National Park', 'loop', 12.6, 4448.0, 4, '["Snake Creek Road", "Dead Lake Trail", "Shoshone Trail", "Snake Divide Trail", "Highland Ridge Route", "Johnson-Baker Trail"]')
+   ('Viewpoint Loop', 'Red Rock Canyon National Conservation Area', 'loop', 18.1, 2334.0, 4, '["Old Spanish Trail", "Landmine Loop", "The Hurl", "Hurl Trail Connector (N)", "Flow Landmine Connector"]')
+   ('Peak 5983 Loop', 'Spring Mountains National Recreation Area', 'loop', 15.7, 2751.0, 4, '["Black Velvet Road", "Old Spanish Trail", "Lil\' Daytona"]')
+   ('Johnson Lake Outlook Loop', 'Great Basin National Park', 'loop', 13.6, 4044.0, 4, '["Camground Connector Trail", "Timber Creek Trail", "Johnson Lake Trail", "Johnson-Baker Trail", "Baker Creek Trail", "Baker Creek Loop Trail"]')
+   ('Waterfall via Brokeback Mountain', 'Red Rock Canyon National Conservation Area', 'out_back', 9.3, 724.0, 3, '["Brokeback Mountain", "Tunneling into Red Rock", "Santeria D.H.", "Calico Causeway", "Calico Hills Trail"]')
+   ('Waterfall Loop', 'North McCullough Wilderness', 'loop', 12.3, 1213.0, 4, '["Hidden Valley Trail", "Petroglyph Trail", "Lower Bato", "Bosley", "Charlie\'s Angels", "Inspirada Powerline"]')
+   ('Chocolate Peak Loop', 'Mount Rose Wilderness', 'loop', 12.2, 3501.0, 4, '["Jones Creek Trail", "Jones/Whites Creek Loop", "Church\'s Pond Trail"]')
+   ('McClellan Peak Loop', '', 'loop', 16.0, 3668.0, 4, '["Rocky Trail", "Powerline Road", "Goni Road", "Gont Road", "County Road 224", "Centennial Loop"]')
+   ('Mount Scott Loop', '', 'loop', 15.2, 4170.0, 4, '["Powerline Road", "Goni Road", "Gont Road", "County Road 224"]')
+   ('Sugarloaf Loop', '', 'loop', 15.2, 4303.0, 4, '["Powerline Road", "County Road 224"]')
+   ('Mummy Mountain via Charleston Peak Trail North Loop', 'Mount Charleston Wilderness', 'out_back', 11.9, 4834.0, 4, '["Charleston Peak Trail North Loop"]')
+   ('Whiskey Peak Loop', 'Rainbow Mountain Wilderness', 'loop', 8.4, 1811.0, 4, '["Black Velvet Road", "Approach Black Velvet", "Descent Black Velvet Peak", "Lil\' Daytona"]')
+   ('Red Top Mountain Loop', '', 'loop', 14.2, 2037.0, 4, '["Loop 1 - Dill Canyon", "Loop 3 - Long Canyon Loop", "Loop 2 - Limestone Wash Ext."]')
+   ('Rock Arch via White Rock Loop', 'Red Rock Canyon National Conservation Area', 'out_back', 11.1, 1593.0, 4, '["White Rock Loop", "Grand Circle Loop", "Calico Tanks Trail"]')
+   ('Indecision Peak via East Face Gully', 'Red Rock Canyon National Conservation Area', 'out_back', 10.5, 3158.0, 4, '["Oak Creek Canyon", "South Oak Creek", "Valley Trail", "First Creek Canyon", "East Face Gully"]')
+   ('Snow Valley Peak Loop', '', 'loop', 12.8, 2391.0, 4, '["North Canyon Road", "Tahoe Rim Trail"]')
+   ('White Domes via Prospect Trail', 'Valley of Fire State Park', 'out_back', 10.2, 932.0, 3, '["Pinnacles Loop", "Prospect Trail", "White Domes Trail / Prospect Trail", "Seven Wonders Alt Trail"]')
+   ('Areola Peak Loop', 'Sloan Canyon National Conservation Area', 'loop', 13.2, 1863.0, 4, '["Anthem East", "Anthem East Trail", "McCullough Hills Trail", "Anthem East - Bursage Loop Trail", "Sloan 500 Trail", "701 Connector"]')
+   ('Turtlehead Peak via Kraft Mountain Loop Trail', 'La Madre Mountain Wilderness', 'out_back', 8.5, 2672.0, 4, '["Kraft Mountain Loop Trail", "Turtlehead Peak Trail"]')
+   ('Prison Hill Loop', '', 'loop', 9.1, 1653.0, 4, '["Mexican Dam Trail", "Prison Hill Recreation Access", "Prison Hill Trail", "Bitterbrush Loop", "Sagebrush Loop", "Prision Hill Recreation Access"]')
+   ('Rocky Peak Loop', '', 'loop', 17.0, 3476.0, 4, '["Silver Knolls Boulevard", "Jackpot Road"]')
+   ("Robber's Roost Cave Loop", 'Spring Mountains National Recreation Area', 'loop', 9.9, 2484.0, 4, '["Telephone Canyon Spur A", "Telephone Canyon Road", "Link Trail", "Hike-A-Bike Trail", "Percocet Trail", "Chutes and Ladders"]')
+
+spot checks:
+   ('Route up Mount Wilson', 'Rainbow Mountain Wilderness', 'out_back', 4.5, 2916.0, 4, 'peak,spring,views')
+   ('Shadow of Mount Wilson', 'Red Rock Canyon National Conservation Area', 'out_back', 2.0, 316.0, 1, '')
+
+largest parks: [('Red Rock Canyon National Conservation Area', 122), ('Sloan Canyon National Conservation Area', 81), ('Spring Mountains National Recreation Area', 77), ('Great Basin National Park', 30), ('Valley of Fire State Park', 20), ('Jarbidge Wilderness', 18), ('Desert National Wildlife Refuge', 18), ('Mount Rose Wilderness', 17), ('Gold Butte National Monument', 17), ('Arc Dome Wilderness', 17), ('Mount Moriah Wilderness', 14), ('Ruby Mountains Wilderness', 14), ('Spooner Lake & Backcountry State Park', 14), ('Mount Charleston Wilderness', 13), ('High Schells Wilderness', 12)]
+reading new-mexico.filtered.osm.pbf
+read: 156695 trail ways, 700 routes, 6549 points, 1502 parks, 2295 lakes, 16525 parking  (25s)
+graph: 154442 junctions, 156843 trail pieces
+trailheads: 1306, destinations: 720
+suggested routes: 384 (from 931 candidates, 12s)
+candidates: 4240
+terrain: fetching 905 tiles
+terrain: done
+trails: 3674  (108s)
+done in 108s
+trails: 3674  parks: 163
+by kind: [('route', 651), ('suggested', 258), ('trail', 2765)]
+by route type: [('loop', 245), ('out_back', 3417), ('point', 12)]
+by difficulty: [(1, 1785), (2, 698), (3, 393), (4, 798)]
+missing elevation: 0
+  feature waterfall: 105
+  feature peak: 403
+  feature views: 710
+  feature lake: 206
+  feature river: 347
+  feature beach: 0
+  feature hot_spring: 10
+  feature cave: 78
+  feature historic: 147
+with wikipedia/wikidata: 41
+
+top 25 by score:
+   ('Sandia Crest Loop', 'Sandia Mountain Wilderness', 'loop', 21.7, 6254.0, 4, 'cave,historic,peak,river,spring,views,waterfall')
+   ('Dragons Tooth Loop', 'Cibola National Forest', 'loop', 21.6, 5744.0, 4, 'cave,historic,peak,river,spring,views,waterfall')
+   ('The Chimney Loop', 'Sandia Mountain Wilderness', 'loop', 17.4, 5664.0, 4, 'cave,historic,peak,river,spring,views,waterfall')
+   ('Grand Enchantment Trail Segment 39: Sandia Crest', 'Sandia Mountain Wilderness', 'out_back', 21.0, 4986.0, 4, 'peak,river,spring,views,waterfall')
+   ('The Thumb Loop', 'Cibola National Forest', 'loop', 18.8, 5060.0, 4, 'peak,spring,views,waterfall')
+   ('Tram Lower to Upper Terminal via Tramway Tr and La Luz', 'Sandia Mountain Wilderness', 'out_back', 18.7, 4439.0, 4, 'peak,river,spring,views,waterfall')
+   ('Tram Lower Terminal to Sandia Crest', 'Sandia Mountain Wilderness', 'out_back', 17.5, 4539.0, 4, 'peak,river,spring,views,waterfall')
+   ('El Camino Real de Tierra Adentro National Historic Trail - Bernalillo County', '', 'out_back', 58.0, 20.0, 1, 'historic,lake,river,views')
+   ('La Luz Trail', 'Sandia Mountain Wilderness', 'out_back', 19.8, 3690.0, 4, 'peak,spring,views,waterfall')
+   ('Tram to Piedra Lisa North Trailhead', 'Sandia Mountain Wilderness', 'out_back', 18.2, 3539.0, 4, 'river,spring,views,waterfall')
+   ('El Camino Real de Tierra Adentro National Historic Trail - Santa Fe County', '', 'out_back', 51.7, 309.0, 4, 'historic,river,views')
+   ('The Prow via Chimney Canyon Route', 'Sandia Mountain Wilderness', 'out_back', 11.9, 5597.0, 4, 'peak,river,spring,views,waterfall')
+   ('La Luz to Crest Route', 'Sandia Mountain Wilderness', 'out_back', 14.1, 3785.0, 4, 'peak,spring,views,waterfall')
+   ('The Thumb via Tramway Trail', 'Cibola National Forest', 'out_back', 10.2, 3493.0, 4, 'peak,river,spring,views,waterfall')
+   ('Grand Enchantment Trail Segment 20: Mogollon Mountains', 'Gila Wilderness', 'out_back', 57.0, 9297.0, 4, 'peak,river,spring,views,waterfall')
+   ('North Sandia Peak via Chimney Canyon Route', 'Sandia Mountain Wilderness', 'out_back', 9.8, 4763.0, 4, 'peak,river,spring,views,waterfall')
+   ('The Chimney via Tramway Trail', 'Cibola National Forest', 'out_back', 8.4, 3516.0, 4, 'peak,river,spring,views,waterfall')
+   ('Grand Enchantment Trail Alternative 32A', 'Cibola National Forest', 'point', 24.1, 0.0, 1, 'historic,lake,peak,river,spring,views')
+   ('GWT - 160 - Granny Mountain Trail', 'Gila Wilderness', 'out_back', 40.7, 7900.0, 4, 'historic,peak,river,spring,views')
+   ('South Crest Trail', 'Sandia Mountain Wilderness', 'out_back', 38.1, 5635.0, 4, 'cave,peak,spring,views,waterfall')
+   ('GWT - 151 West Fork Trail', 'Gila Wilderness', 'out_back', 69.0, 8728.0, 4, 'historic,lake,river,spring')
+   ('The Thumb via La Luz Trail (137)', 'Sandia Mountain Wilderness', 'out_back', 11.7, 4672.0, 4, 'historic,peak,views,waterfall')
+   ('Caballo Mountain Loop', 'Santa Fe National Forest', 'loop', 18.8, 5472.0, 4, 'arch,lake,peak,views,waterfall')
+   ('El Camino Real de Tierra Adentro National Historic Trail - Socorro County', '', 'out_back', 63.3, 773.0, 4, 'historic,river')
+   ('Baldy Mountain Loop', 'Vermejo Park Ranch Greenwood Tract', 'loop', 16.7, 4565.0, 4, 'historic,lake,peak,spring,views')
+
+suggested routes, top 25:
+   ('Sandia Crest Loop', 'Sandia Mountain Wilderness', 'loop', 21.7, 6254.0, 4, '["Tree Spring Trail", "Tree Spring Trail (147)", "10K Trail South", "10K Trail South (200)", "Challenge Trail (233)", "Switchback Trail (271)"]')
+   ('Dragons Tooth Loop', 'Cibola National Forest', 'loop', 21.6, 5744.0, 4, '["Foothills Trail (365)", "Foothills Trail North", "Trail 305", "Old 305", "Trail 305A", "Trail 341"]')
+   ('The Chimney Loop', 'Sandia Mountain Wilderness', 'loop', 17.4, 5664.0, 4, '["Domingo Baca/TWA Trail", "Domingo Baca/TWA Trail Ridgeline Cutoff", "Domingo Baca/TWA Trail Difficult Route", "Domingo Baca/Upper TWA Route", "La Luz Trail (137)", "Crest Spur Trail (84)"]')
+   ('The Thumb Loop', 'Cibola National Forest', 'loop', 18.8, 5060.0, 4, '["10K Trail North", "North Crest Trail", "Switchback Trail (271)", "Kiwanis Meadow Road (94)", "Crest to KMR Connector", "South Crest Trail"]')
+   ('The Prow via Chimney Canyon Route', 'Sandia Mountain Wilderness', 'out_back', 11.9, 5597.0, 4, '["South Crest Trail", "Sandia Crest Access Trail", "Royce\'s Trail", "Chimney Canyon Route", "La Luz Trail (137)", "Old La Luz"]')
+   ('The Thumb via Tramway Trail', 'Cibola National Forest', 'out_back', 10.2, 3493.0, 4, '["Tramway Trail", "Old La Luz (137B)", "Old La Luz", "La Luz Trail (137)", "Old La Luz Trail"]')
+   ('North Sandia Peak via Chimney Canyon Route', 'Sandia Mountain Wilderness', 'out_back', 9.8, 4763.0, 4, '["La Cueva Trail", "Tramway Trail", "Old La Luz (137B)", "Old La Luz", "La Luz Trail (137)", "Chimney Canyon Route"]')
+   ('The Chimney via Tramway Trail', 'Cibola National Forest', 'out_back', 8.4, 3516.0, 4, '["Tramway Trail", "Old La Luz (137B)", "Old La Luz", "La Luz Trail (137)", "Chimney Canyon Route"]')
+   ('The Thumb via La Luz Trail (137)', 'Sandia Mountain Wilderness', 'out_back', 11.7, 4672.0, 4, '["Foothills Trail (365)", "Foothills Trail North", "Domingo Baca Connector", "Domingo Baca Trail (230)", "Domingo Baca/TWA Trail", "Domingo Baca/TWA Trail Ridgeline Cutoff"]')
+   ('Caballo Mountain Loop', 'Santa Fe National Forest', 'loop', 18.8, 5472.0, 4, '["Mitchell Trail (69)", "Old Mitchell Trail", "Guaje Canyon Trail", "Caballo Canyon Trail (277)", "Old Caballo Peak Trail (277)", "Guaje Canyon Trail (282)"]')
+   ('Baldy Mountain Loop', 'Vermejo Park Ranch Greenwood Tract', 'loop', 16.7, 4565.0, 4, '["4WD", "Maxwell to Miranda Trail", "Black Horse to Baldy Mtn and Baldy Town Trail", "Baldy Mt to Baldy Town and Black Horse Trail", "Baldy Mountain Peak Access Trail", "Out of Service"]')
+   ('Deception Peak Loop', 'Pecos Wilderness', 'loop', 16.6, 4935.0, 4, '["Rio en Medio Trail (163)", "Rio En Medio Shortcut", "Winsor Trail (254)", "Ravens Ridge", "Skyline Trail (251)", "Skyline Alt"]')
+   ('Travertine Falls Loop', 'Sandia Mountain Wilderness', 'loop', 13.5, 4807.0, 4, '["Three Gun Spring Trail", "Hawk Watch Trail", "Old Crest Trail", "South Crest Trail", "South Crest Cutoff", "South Crest Trail (130)"]')
+   ('Shaefers Peak Loop', 'Philmont Scout Ranch', 'loop', 22.6, 3742.0, 4, '["Cito Turnaround - Catherdral Rock", "Ute Springs - Cathedral Rock Trail", "4WD", "Aspen Springs - Clarks Fork Trail", "Catherdral Rock Camp to Clarks Fork Trail", "Clarks Fork - Upper Clarks Fork Trail"]')
+   ('The Thumb via 10K Trail North', 'Sandia Mountain Wilderness', 'out_back', 12.8, 2747.0, 4, '["10K Trail North", "North Crest Trail", "Switchback Trail (271)", "Kiwanis Meadow Road (94)", "Crest to KMR Connector", "South Crest Trail"]')
+   ('The Chimney via Chimney Canyon Route', 'Sandia Mountain Wilderness', 'out_back', 6.5, 2886.0, 4, '["Piedra Lisa South (135)", "Piedra Lisa - La Luz Link Trail Trail", "La Luz Trail", "Tramway Trail", "Old La Luz (137B)", "Old La Luz"]')
+   ('Osha Peak Loop', 'Manzano Mountain Wilderness', 'loop', 20.5, 6167.0, 4, '["Red Canyon Trail (89)", "Spruce Spring Trail (189)", "Manzano Crest Trail", "Trigo Canyon Trail (185)", "Salas Trail (184)"]')
+   ('Trail Peak Loop', 'Philmont Scout Ranch', 'loop', 20.2, 3659.0, 4, '["4WD", "Lovers Leap to Crater Lake Camp Trail", "Intracamp Trail", "Crater Lake Bypass Trail", "Crater Lake to Bonito Creek Trail", "Trail Peak South Access Trail"]')
+   ('Painted Cave Loop', 'Bandelier Wilderness', 'loop', 18.2, 3407.0, 4, '["Boundary Peak Trail", "Upper Capulin Trail", "Lower Capulin Trail", "Tierra Media Trail", "Middle Alamo Trail", "Upper Alamo Trail"]')
+   ('Cerro Pelon Loop', 'Cibola National Forest', 'loop', 16.0, 3079.0, 4, '["Forest Service 453 Road", "Forest Svc 453 Road", "Forest Svc 451 Road", "Continental Divide Trail", "Forest Service Road 239G", "Forest Svc 453DA Road"]')
+   ('Lightning Scarred Tree Loop', 'Sandia Mountain Wilderness', 'loop', 14.1, 5013.0, 4, '["Embudo Trail", "Embudo Trail (193)", "Three Gun Spring Trail", "Three Gun Spring Route", "Victoria\'s Route (Approximate)", "Hawk Watch Trail"]')
+   ('The Wall Overlook Loop', 'Sandia Mountain Wilderness', 'loop', 13.9, 3761.0, 4, '["North Crest Trail", "Del Orno Trail", "Ellis Trail (202)", "Osha Loop Trail", "Osha Spring Trail"]')
+   ('South Sandia Peak Loop', 'Sandia Mountain Wilderness', 'loop', 13.8, 4987.0, 4, '["Embudo Trail", "Trail 401", "Foothills Trail", "White Wash Trail South Approach", "White Wash Trail", "Embudito Trail"]')
+   ('Eagle Peak Loop', 'Gila National Forest', 'loop', 13.6, 3038.0, 4, '["Wilson Canyon Road", "Eagle Peak L.O. Road"]')
+   ('Ripley Point Loop', 'Carson National Forest', 'loop', 13.0, 3638.0, 4, '["Bear Mountain Trail (28)", "Forest Road 1877", "Comales Trail (22)", "Divide Trail (36)", "Indian Creek Trail (27)", "Osha Canyon Trail (20)"]')
+
+spot checks:
+   ('The Sandstone', '', 'out_back', 0.7, 56.0, 1, '')
+
+largest parks: [('Cibola National Forest', 491), ('Philmont Scout Ranch', 281), ('Santa Fe National Forest', 251), ('Carson National Forest', 203), ('Gila Wilderness', 194), ('Gila National Forest', 187), ('Lincoln National Forest', 184), ('Sandia Mountain Wilderness', 136), ('Pecos Wilderness', 99), ('Aldo Leopold Wilderness', 72), ('Glade Run Recreation Area', 53), ('Galisteo Basin Preserve', 51), ('Manzano Mountain Wilderness', 42), ('White Mountain Wilderness', 38), ('Rio Grande del Norte National Monument', 32)]
+reading norcal.filtered.osm.pbf
+read: 651958 trail ways, 1016 routes, 15474 points, 7163 parks, 4393 lakes, 58613 parking  (71s)
+graph: 503478 junctions, 489884 trail pieces
+trailheads: 5389, destinations: 3131
+suggested routes: 1539 (from 3273 candidates, 35s)
+candidates: 11601
+terrain: fetching 1930 tiles
+terrain: done
+trails: 9825  (216s)
+done in 216s
+trails: 9825  parks: 650
+by kind: [('route', 937), ('suggested', 1076), ('trail', 7812)]
+by route type: [('loop', 649), ('out_back', 9173), ('point', 3)]
+by difficulty: [(1, 5366), (2, 1904), (3, 959), (4, 1596)]
+missing elevation: 0
+  feature waterfall: 514
+  feature peak: 1232
+  feature views: 2349
+  feature lake: 1844
+  feature river: 872
+  feature beach: 58
+  feature hot_spring: 28
+  feature cave: 71
+  feature historic: 490
+with wikipedia/wikidata: 33
+
+top 25 by score:
+   ('California Coastal Trail', 'Marin Headlands', 'out_back', 39.2, 1324.0, 4, 'beach,cave,historic,lake,peak,views')
+   ('Yosemite Valley Loop Trail', 'Yosemite National Park', 'out_back', 38.1, 558.0, 4, 'cave,lake,river,spring,views,waterfall')
+   ('Ohlone Wilderness Trail', 'Ohlone Regional Wilderness Area', 'out_back', 44.2, 10416.0, 4, 'lake,peak,river,spring,views')
+   ('ADT - California - T - Seg 4', 'Auburn State Recreation Area', 'out_back', 52.4, 6660.0, 4, 'cave,peak,river,views')
+   ('Mount Whitney Trail', 'Whitney Zone', 'out_back', 21.1, 6677.0, 4, 'lake,peak,spring,views,waterfall')
+   ('Silver Knapsack Trail', 'Sequoia National Park', 'out_back', 62.7, 13162.0, 4, 'historic,lake,river')
+   ('Skyline To The Sea Trail', 'Big Basin Redwoods State Park', 'out_back', 51.4, 3585.0, 4, 'spring,views,waterfall')
+   ('Pohono Trail', 'Yosemite Wilderness', 'out_back', 25.1, 7031.0, 4, 'peak,spring,views,waterfall')
+   ('Minarets Falls Loop', 'Devils Postpile National Monument', 'loop', 15.1, 2759.0, 4, 'historic,hot_spring,lake,river,spring,views,waterfall')
+   ('Horseback Hill Loop', 'Harvey West Park', 'loop', 14.0, 2791.0, 4, 'beach,historic,lake,peak,river,spring,views')
+   ('Cascade Fall via John Muir Trail', 'Yosemite National Park', 'out_back', 11.8, 2685.0, 4, 'lake,river,spring,views,waterfall')
+   ('Grand Canyon of the Tuolumne Trail', 'Yosemite Wilderness', 'out_back', 67.0, 10427.0, 4, 'lake,river,spring,views,waterfall')
+   ('Kelsey National Recreation Trail', '', 'out_back', 59.9, 5594.0, 4, 'lake,peak,river,spring,views,waterfall')
+   ('ADT - California - T - Seg 7', 'Mount Diablo State Park', 'out_back', 64.6, 8921.0, 4, 'historic,lake,peak,spring,views')
+   ('ADT - California - T - Seg 8', 'Ecological Study Area', 'out_back', 61.9, 915.0, 4, 'historic,lake,peak,spring,views')
+   ('Diablo Regional Trail', 'Mount Diablo State Park', 'out_back', 59.9, 11268.0, 4, 'historic,lake,peak,spring,views')
+   ('Robie Point via Western States Trail', 'Auburn State Recreation Area', 'out_back', 10.4, 2016.0, 4, 'beach,cave,peak,river,views')
+   ("Philosopher's Way", 'John McLaren Park', 'out_back', 6.7, 742.0, 2, 'lake,peak,spring,views,waterfall')
+   ('East Bay Skyline National Recreation Trail', 'Reinhardt Redwood Regional Park', 'out_back', 51.2, 5769.0, 4, 'historic,peak,spring,views,waterfall')
+   ('Fish Creek Trail', 'John Muir Wilderness', 'out_back', 38.7, 5990.0, 4, 'historic,hot_spring,river,spring,views,waterfall')
+   ('Pine Ridge Trail', 'Ventana Wilderness', 'out_back', 46.1, 11642.0, 4, 'hot_spring,peak,river,spring,views')
+   ('Mist Trail', 'Yosemite National Park', 'out_back', 5.3, 2262.0, 4, 'lake,river,spring,views,waterfall')
+   ('Vasquez Knob Loop', 'Garland Ranch Regional Park', 'loop', 12.5, 3566.0, 4, 'historic,lake,peak,river,views,waterfall')
+   ('Sugarloaf Mountain Loop', 'Yolla Bolly-Middle Eel Wilderness', 'loop', 22.0, 5268.0, 4, 'lake,peak,river,spring,views')
+   ('Briones to Mt. Diablo Regional Trail', 'Shell Ridge Open Space', 'out_back', 17.5, 1643.0, 4, 'lake,spring,views')
+
+suggested routes, top 25:
+   ('Minarets Falls Loop', 'Devils Postpile National Monument', 'loop', 15.1, 2759.0, 4, '["Mammoth Pass Trail", "Old John Muir Trail", "Rainbow Falls-Reds Cutoff", "Postpile Ranger Station Trail", "Pacific Crest Trail", "John Muir Trail"]')
+   ('Horseback Hill Loop', 'Harvey West Park', 'loop', 14.0, 2791.0, 4, '["Ox Trail Road", "River Trail", "Rincon Fire Road", "Big Rock Hole Trail", "Rincon Connector Trail", "Rincon Trail"]')
+   ('Cascade Fall via John Muir Trail', 'Yosemite National Park', 'out_back', 11.8, 2685.0, 4, '["John Muir Trail", "Mist Trail"]')
+   ('Robie Point via Western States Trail', 'Auburn State Recreation Area', 'out_back', 10.4, 2016.0, 4, '["Olmstead Loop Trail", "Wendell T Robie Trail", "Training Hill (Pointed Rocks) Trail", "No Hands Bridge", "Western States Trail"]')
+   ('Vasquez Knob Loop', 'Garland Ranch Regional Park', 'loop', 12.5, 3566.0, 4, '["Lupine Loop Trail", "Cottonwood Trail", "Maple Canyon Trail", "Buckeye Trail", "Fern Trail", "Mesa Trail"]')
+   ('Sugarloaf Mountain Loop', 'Yolla Bolly-Middle Eel Wilderness', 'loop', 22.0, 5268.0, 4, '["Soldier Ridge Trail", "Minnie Lake Trail", "Sugarloaf Trail", "Summit Trail", "Wrights Ridge Trail", "Haynes Delight Trail"]')
+   ('Nevada Fall via Mist Trail', 'Yosemite National Park', 'out_back', 5.7, 2307.0, 4, '["John Muir Trail", "Mist Trail"]')
+   ('Sierra Point via Valley Loop Trail', 'Yosemite National Park', 'out_back', 12.7, 1050.0, 4, '["Valley Loop Trail", "John Muir Trail"]')
+   ('Coolidge Drive Lookout via Spring Trail', 'Henry Cowell Redwoods State Park', 'out_back', 11.4, 2215.0, 4, '["Nature Trail", "Indian Creek Trail", "Pipeline Road", "River Trail", "Rincon Fire Road", "Big Rock Hole Trail"]')
+   ('Mount Whitney Loop', 'Whitney Zone', 'loop', 15.0, 6406.0, 4, '["Mount Whitney Trail", "North Fork Lone Pine Creek Trail", "Mount Whitney Mountaineer\'s Route", "John Muir Trail"]')
+   ('Bare Knoll Loop', 'Mount Tamalpais State Park', 'loop', 15.0, 2837.0, 4, '["Lakeview Fire Road", "Lagunitas-Rock Spring Fire Road", "Lake Lagunitas Road", "Collier Trail", "Collier Spring Trail", "International Trail"]')
+   ('Fourth of July Peak Loop', 'Mokelumne Wilderness', 'loop', 14.6, 3590.0, 4, '["Pacific Crest Trail", "Carson Pass to Lake Winnemucca Trail", "Camp Irene Trail", "Summit City Trail", "Evergreen Trail", "Forestdale Road"]')
+   ('Lower Cliff Creek Falls Loop', 'Sequoia National Park', 'loop', 26.5, 9476.0, 4, '["Timber Gap Trail", "Timber Gap Cliff Creek Trail", "Black Rock Pass Trail", "Big Five Lakes Trail", "Lost Canyon Trail", "Sawtooth Pass Trail"]')
+   ('Murietta Falls Loop', 'Ohlone Regional Wilderness Area', 'loop', 14.0, 3949.0, 4, '["Vallecitos Trail", "Ohlone Trail", "Rocky Ridge Trail", "Greenside Road", "Stromer Spring Road"]')
+   ('Peñon Peak Loop', 'Garland Ranch Regional Park', 'loop', 7.3, 2263.0, 4, '["Lupine Loop Trail", "Cottonwood Trail", "Maple Canyon Trail", "Buckeye Trail", "Fern Trail", "Sage Trail"]')
+   ("Devil's Pulpit Loop", 'Mount Diablo State Park', 'loop', 13.4, 4126.0, 4, '["Clayton Oaks Road", "Donner Canyon Road", "Meridian Ridge Road", "Middle Trail", "Prospector\'s Gap Road", "North Peak Trail"]')
+   ('Table Mountain Loop', 'Upper Stevens Creek County Park', 'loop', 13.0, 2312.0, 4, '["Peters Creek Trail", "Ward Road", "Hickory Oaks Trail", "Saratoga Gap Trail", "Charcoal Road", "Table Mountain Fire Road"]')
+   ('Mount Diablo Loop', 'Mount Diablo State Park', 'loop', 12.6, 3897.0, 4, '["Donner Canyon Road", "Meridian Ridge Road", "Middle Trail", "Prospector\'s Gap Road", "North Peak Trail", "Death Slide"]')
+   ('Wildcat Peak Loop', 'Tilden Nature Area', 'loop', 12.4, 2294.0, 4, '["Bonitas Gate Trail", "Wildcat Creek Trail", "Conlon Trail", "Wildcat Peak Trail", "Sylvan Trail", "Jewel Lake Trail"]')
+   ('Tells Peak Loop', 'Eldorado National Forest', 'loop', 22.6, 3702.0, 4, '["Forest Service Road 36", "Highland Trail", "Rubicon Trail", "Loon Lake Trail (15E23)", "Bassi Trail (15E19)"]')
+   ('Eagle Peak Loop', 'Mount Diablo State Park', 'loop', 11.7, 4024.0, 4, '["Summit Trail", "Mary Bowerman Trail Loop", "Death Slide", "North Peak Trail", "Prospector\'s Gap Road", "Bald Ridge Trail"]')
+   ('Eagle Peak Loop', 'Yosemite Wilderness', 'loop', 21.5, 5105.0, 4, '["Valley Loop Trail", "Upper Yosemite Fall Trail", "El Capitan Trail", "Rockslides Trail", "Spur at Devil\'s Elbow"]')
+   ('Monolith Loop', 'Hain Wilderness', 'loop', 11.3, 2705.0, 4, '["Blue Oak Trail", "Condor Gulch Trail", "High Peaks Trail", "Moses Spring Trail", "Bear Gulch Cave Trail", "Bear Gulch Lower Cave"]')
+   ('Vernal Fall via John Muir Trail', 'Yosemite National Park', 'out_back', 3.0, 1238.0, 2, '["John Muir Trail", "Mist Trail"]')
+   ('Rock Springs Peak Loop', 'Henry W. Coe State Park', 'loop', 16.9, 4512.0, 4, '["Hunting Hollow Road", "Lyman Willson Ridge Trail", "Bowl Trail", "Wagon Road", "Vasquez Road", "Vasquez Trail"]')
+
+spot checks:
+   ('Tafoni sandstone Formation Loop', 'El Corte de Madera Creek Open Space Preserve', 'loop', 2.4, 358.0, 1, 'peak,views')
+   ('Sandstone Trail', 'Five Canyons Open Space', 'out_back', 1.2, 137.0, 1, '')
+   ('Trosi-Switzer Trail', 'Plumas National Forest', 'out_back', 0.7, 123.0, 1, '')
+   ('Mount Baldy Loop', 'Tahoe National Forest', 'loop', 12.2, 2865.0, 4, 'peak,spring,views')
+   ('Eaton Canyon Trail', 'Eaton Park', 'out_back', 1.7, 421.0, 1, '')
+
+largest parks: [('Mendocino National Forest', 448), ('Tahoe National Forest', 294), ('Shasta-Trinity National Forest', 234), ('Trinity Alps Wilderness', 199), ('John Muir Wilderness', 176), ('Eldorado National Forest', 174), ('Sierra National Forest', 152), ('Stanislaus National Forest', 151), ('Yosemite Wilderness', 141), ('Henry W. Coe State Park', 131), ('Sequoia National Park', 124), ('Ansel Adams Wilderness', 114), ('Berryessa Snow Mountain National Monument', 103), ('Plumas National Forest', 103), ('Mount Tamalpais Watershed', 102)]
+reading oregon.filtered.osm.pbf
+read: 306910 trail ways, 244 routes, 8150 points, 3624 parks, 2980 lakes, 25683 parking  (27s)
+graph: 334629 junctions, 326018 trail pieces
+trailheads: 3025, destinations: 2123
+suggested routes: 1003 (from 1864 candidates, 17s)
+candidates: 4979
+terrain: fetching 1401 tiles
+terrain: done
+trails: 4277  (83s)
+done in 83s
+trails: 4277  parks: 380
+by kind: [('route', 205), ('suggested', 694), ('trail', 3378)]
+by route type: [('loop', 377), ('out_back', 3896), ('point', 4)]
+by difficulty: [(1, 2143), (2, 773), (3, 432), (4, 929)]
+missing elevation: 0
+  feature waterfall: 386
+  feature peak: 736
+  feature views: 1397
+  feature lake: 825
+  feature river: 474
+  feature beach: 4
+  feature hot_spring: 12
+  feature cave: 43
+  feature historic: 79
+with wikipedia/wikidata: 10
+
+top 25 by score:
+   ('Paulina Hot Springs Loop', 'Newberry National Volcanic Monument', 'loop', 27.5, 3747.0, 4, 'hot_spring,lake,river,spring,views')
+   ('Viewpoint Loop', 'Three Sisters Wilderness', 'loop', 21.5, 3446.0, 4, 'lake,peak,spring,views,waterfall')
+   ('Waterfall Loop', 'Deschutes National Forest', 'loop', 19.3, 3361.0, 4, 'lake,peak,spring,views,waterfall')
+   ('Blair Lake Trail', 'Waldo Lake Wilderness', 'out_back', 29.1, 5653.0, 4, 'lake,river,spring,views,waterfall')
+   ('PCT - California Section R', '', 'out_back', 58.3, 9569.0, 4, 'lake,spring')
+   ('Grasshopper Mountain Loop', 'Rogue-Umpqua Divide Wilderness', 'loop', 15.3, 3938.0, 4, 'lake,peak,spring,views,waterfall')
+   ('Taylor Butte Loop', 'Willamette National Forest', 'loop', 20.0, 1990.0, 4, 'lake,peak,spring,views')
+   ('McKenzie River Trail #3507', 'Willamette National Forest', 'out_back', 49.9, 505.0, 4, 'hot_spring,lake,river,spring,views,waterfall')
+   ('Crane Mountain NRT', 'Fremont-Winema National Forest', 'out_back', 63.4, 6678.0, 4, 'peak,spring,views')
+   ('Eight Lakes View Loop', 'Mount Jefferson Wilderness', 'loop', 18.4, 2707.0, 4, 'lake,peak,spring,views')
+   ('Wildwood Trail', 'Forest Park', 'out_back', 58.4, 4533.0, 4, 'spring,views,waterfall')
+   ('Illinois River Trail', 'Kalmiopsis Wilderness', 'out_back', 56.0, 15203.0, 4, 'peak,river,views')
+   ('Bearwallow Butte Loop', 'Deschutes National Forest', 'loop', 16.3, 1772.0, 4, 'peak,spring,views,waterfall')
+   ('Broken Hand Loop', 'Three Sisters Wilderness', 'loop', 15.5, 2588.0, 4, 'lake,peak,views,waterfall')
+   ('Devils Peak Loop', 'Sky Lakes Wilderness', 'loop', 15.5, 3146.0, 4, 'lake,peak,spring,views')
+   ('Nick Eaton Falls Loop', 'Mark O. Hatfield Wilderness', 'loop', 15.4, 4592.0, 4, 'peak,spring,views,waterfall')
+   ('Little Crater Loop', 'Newberry National Volcanic Monument', 'loop', 15.0, 2506.0, 4, 'lake,peak,river,views')
+   ('Elkhorn Crest National Recreation Trail', '', 'out_back', 45.6, 5590.0, 4, 'lake,peak,spring,views')
+   ('Dimple Hill Loop', 'McDonald Research Forest', 'loop', 14.8, 2217.0, 4, 'lake,peak,spring,views')
+   ('Deschutes River Trail', 'Deschutes River State Scenic Waterway', 'out_back', 46.5, 1461.0, 4, 'historic,river,spring')
+   ('Bigfoot Trail', 'Red Buttes Wilderness', 'out_back', 30.3, 5209.0, 4, 'lake')
+   ('Rogue River National Recreation Trail', '', 'out_back', 74.3, 5011.0, 4, 'historic,river,waterfall')
+   ('Horse Mountain via Mt. Elijah Tie Trail', 'Oregon Caves National Preserve', 'out_back', 9.2, 1684.0, 4, 'cave,lake,peak,spring,views,waterfall')
+   ('Horse Mountain Loop', 'Three Sisters Wilderness', 'loop', 12.4, 1547.0, 4, 'lake,peak,spring,views')
+   ('Crown Zellerbach Trail', '', 'out_back', 38.4, 2742.0, 4, 'cave,historic,lake,waterfall')
+
+suggested routes, top 25:
+   ('Paulina Hot Springs Loop', 'Newberry National Volcanic Monument', 'loop', 27.5, 3747.0, 4, '["Crater Rim Trail 3957", "Newberry Crater Trail", "Silica Trail", "Little Crater Trail #3953", "Paulina Lakeshore Trail #3955", "Crater Rim Trail #3957"]')
+   ('Viewpoint Loop', 'Three Sisters Wilderness', 'loop', 21.5, 3446.0, 4, '["Forest Road 4600-370", "Todd Ridge Trail", "Todd Lake Trail", "Todd Trail #34", "Soda Creek Trail #11", "Broken Top Trail #10"]')
+   ('Waterfall Loop', 'Deschutes National Forest', 'loop', 19.3, 3361.0, 4, '["Tam McArthur Rim Trail #4078", "Tam McArthur Rim Horse Trail #4078.1", "Forest Road 4600-370", "Metolius-Windigo Trail #99", "Metolius-Windigo Trail", "Swampy Lakes Trail #23"]')
+   ('Grasshopper Mountain Loop', 'Rogue-Umpqua Divide Wilderness', 'loop', 15.3, 3938.0, 4, '["Lakes Trail", "Grasshopper Trail", "Grasshopper Mountain Trail", "Grasshopper Mountain Tie Trail", "Acker Divide Trail", "Indian Trail"]')
+   ('Taylor Butte Loop', 'Willamette National Forest', 'loop', 20.0, 1990.0, 4, '["National Forest Development Road 4636", "National Forest Development Road 5898-600", "National Forest Development Road 5898-514", "Fields Lake Trail #3579", "Wahanna Trail #3583", "Harralson Trail"]')
+   ('Eight Lakes View Loop', 'Mount Jefferson Wilderness', 'loop', 18.4, 2707.0, 4, '["Pine Ridge Trail #3443", "Blue Lake Trail #3422", "Duffy Lake Trail #3427", "Turpentine Trail #3490"]')
+   ('Bearwallow Butte Loop', 'Deschutes National Forest', 'loop', 16.3, 1772.0, 4, '["Forest Road 4601", "Forest Road 4602-140", "Forest Road 4602", "National Forest Development Road 4602-250", "National Forest Development Road 4602-240", "National Forest Development Road 4602-200"]')
+   ('Broken Hand Loop', 'Three Sisters Wilderness', 'loop', 15.5, 2588.0, 4, '["Forest Road 4600-370", "Tam McArthur Rim Horse Trail #4078.1", "Tam McArthur Rim Trail #4078", "Broken Top Trail #10", "Forest Road 4600-380"]')
+   ('Devils Peak Loop', 'Sky Lakes Wilderness', 'loop', 15.5, 3146.0, 4, '["Seven Lakes Trail", "Devil\'s Peak Trail", "Pacific Crest Trail", "Cliff Lake Trail", "Alta Lake Trail", "King Spruce Trail"]')
+   ('Nick Eaton Falls Loop', 'Mark O. Hatfield Wilderness', 'loop', 15.4, 4592.0, 4, '["Wyeth Trail #411", "Gorge Trail #400", "Herman Creek Trail #406", "Casey Creek Trail #476", "Nick Eaton Trail #447", "Gorton Creek Trail #408"]')
+   ('Little Crater Loop', 'Newberry National Volcanic Monument', 'loop', 15.0, 2506.0, 4, '["Crater Rim Trail 3957", "Newberry Crater Trail", "Silica Trail", "Little Crater Trail #3953", "Lost Lake Trail #3958.2", "Lost Lake South Trail"]')
+   ('Dimple Hill Loop', 'McDonald Research Forest', 'loop', 14.8, 2217.0, 4, '["John H. Beuter Road", "CFIRP", "Section 36 Loop Trail", "Road 550a", "Harry J. Nettleton Road", "William A. Davies Road"]')
+   ('Horse Mountain via Mt. Elijah Tie Trail', 'Oregon Caves National Preserve', 'out_back', 9.2, 1684.0, 4, '["Lake Mountain/Bigelow Lakes Trail", "Mt. Elijah Tie Trail", "Mount Elijah Trail", "Limestone Trail", "Cave Creek Extension Road", "Limestone Road"]')
+   ('Horse Mountain Loop', 'Three Sisters Wilderness', 'loop', 12.4, 1547.0, 4, '["Horse Lake Trail #2", "Island Meadow Trail", "Pacific Crest Trail", "Red Hill Trail", "Breezy Point Trail", "McBee Trail"]')
+   ('Devils Rest Loop', 'Mount Hood National Forest', 'loop', 6.5, 2423.0, 4, '["Wahkeena Trail #420", "Angels Rest Trail #415", "Primrose Path", "Devil\'s Slide", "Devils Rest Trail #420C", "Vista Point Trail #419"]')
+   ('Tumalo Falls Loop', 'Deschutes National Forest', 'loop', 22.8, 3058.0, 4, '["Swampy Lakes Trail #23", "Bridge Creek Trail #24", "North Fork Trail #24.2", "Metolius-Windigo Trail #99", "Ramble On (40.1)", "Flagline Trail #41"]')
+   ('Three Fingered Jack Loop', 'Mount Jefferson Wilderness', 'loop', 22.2, 4127.0, 4, '["Pacific Crest Trail", "Three-Fingered Jack Climbers Trail", "Minto Pass Tie Trail", "Old Summit Trail #4014"]')
+   ('Lookout Mountain Loop', 'Mount Hood National Forest', 'loop', 21.5, 3890.0, 4, '["Forest Road 1720-120", "Lookout Mountain Trail #450", "Forest Road 4420", "High Prairie Trail #493", "Divide Trail #458", "Forest Road 3550"]')
+   ('Coyote Butte Loop', 'Deschutes National Forest', 'loop', 21.0, 1133.0, 4, '["Horse to Horse", "Arnold Ice Cave Trail Number 63", "National Forest Development Road 1819-230", "Coyote Loop Trail Number 62", "Boyd Cave Trail Number 66", "Ford Road"]')
+   ('Double Falls Loop', 'Deschutes National Forest', 'loop', 20.9, 2895.0, 4, '["Tumalo Ridge Trail #25.2", "Tumalo Creek Trail #25.1", "Swampy Lakes Trail #23", "Bridge Creek Trail #24", "North Fork Trail #24.2", "Swampy Loop Trail #23.2"]')
+   ('Wolf Mountain Loop', 'Ochoco National Forest', 'loop', 20.4, 4397.0, 4, '["Coffee Pot Trail #820B", "Black Canyon Trail #820", "National Forest Road 5840", "National Forest Road 100", "Forest Service Road 400", "South Prong Trail #281"]')
+   ('Standoff Point Loop', 'Umpqua National Forest', 'loop', 18.7, 5873.0, 4, '["Rogue Umpqua Divide Trail", "Rocky Rim Trail", "Rocky Ridge Trail", "Castle Creek Trail", "Windy Gap Trail", "Whitehorse Trail"]')
+   ('Hole-in-the-Wall Falls Loop', 'Lindsey Creek State Scenic Corridor', 'loop', 9.9, 4587.0, 4, '["Warren Lake Trail #417A", "Mitchell Point Trail #417", "Starvation Ridge Trail #414", "Mount Defiance Trail #413", "Mount Defiance Summit Trail #413B", "Mt. Defiance Road"]')
+   ('Bonney Butte Loop', 'Mount Hood National Recreation Area', 'loop', 9.7, 1835.0, 4, '["Forest Road 4860", "Forest Road 3550", "Forest Road 4891", "Forest Road 4891-130", "Forest Road 4891-120", "Boulder Lake Trail #463"]')
+   ('Taktakli Butte Loop', 'Deschutes National Forest', 'loop', 17.7, 1973.0, 4, '["National Forest Development Road 9736", "National Forest Development Road 2215", "National Forest Development Road 500", "National Forest Development Road 100", "Peter Skene Ogden Trail"]')
+
+spot checks:
+   ('Sandstone Trail', 'Rogue-Umpqua Divide Wilderness', 'out_back', 6.1, 2101.0, 4, '')
+   ('Mount Baldy Loop', 'Baskett Slough National Wildlife Refuge', 'loop', 4.5, 298.0, 2, 'lake,peak,views')
+   ('Mount Baldy via Baskett Slough Trail', 'Baskett Slough National Wildlife Refuge', 'out_back', 6.3, 511.0, 2, 'lake,peak,views')
+   ('Mount Baldy Loop', 'Mt. Baldy Park', 'loop', 1.0, 253.0, 1, 'peak,views')
+
+largest parks: [('Mount Hood National Forest', 299), ('Deschutes National Forest', 247), ('Willamette National Forest', 239), ('Three Sisters Wilderness', 99), ('Siuslaw National Forest', 98), ('Eagle Cap Wilderness', 95), ('Mount Jefferson Wilderness', 69), ('Umpqua National Forest', 68), ('Mount Hood Wilderness', 62), ('Tillamook State Forest', 53), ('Fremont-Winema National Forest', 53), ('McDonald Research Forest', 49), ('Mark O. Hatfield Wilderness', 49), ('Forest Park', 49), ('Oregon Dunes National Recreation Area', 48)]
+reading socal.filtered.osm.pbf
+read: 636072 trail ways, 146 routes, 6673 points, 7440 parks, 1158 lakes, 55588 parking  (47s)
+graph: 421958 junctions, 441773 trail pieces
+trailheads: 4932, destinations: 1891
+suggested routes: 945 (from 2122 candidates, 24s)
+candidates: 6108
+terrain: fetching 963 tiles
+terrain: done
+trails: 5359  (132s)
+done in 132s
+trails: 5359  parks: 473
+by kind: [('route', 124), ('suggested', 667), ('trail', 4568)]
+by route type: [('loop', 396), ('out_back', 4962), ('point', 1)]
+by difficulty: [(1, 3324), (2, 909), (3, 469), (4, 657)]
+missing elevation: 0
+  feature waterfall: 331
+  feature peak: 707
+  feature views: 1474
+  feature lake: 386
+  feature river: 201
+  feature beach: 8
+  feature hot_spring: 1
+  feature cave: 69
+  feature historic: 261
+with wikipedia/wikidata: 31
+
+top 25 by score:
+   ('Gabrielino Trail', 'San Gabriel Mountains National Monument', 'out_back', 64.2, 3032.0, 4, 'historic,lake,views,waterfall')
+   ('Eagle Rock Loop', 'Topanga State Park', 'loop', 11.8, 2507.0, 4, 'cave,peak,spring,views')
+   ('Green Peak via Temescal Ridge Trail', 'Topanga State Park', 'out_back', 13.6, 2201.0, 4, 'cave,peak,spring,views,waterfall')
+   ('May Peak Loop', 'Wilson Canyon Park', 'loop', 15.3, 4748.0, 4, 'historic,lake,peak,spring,views,waterfall')
+   ('Gizmo Peak via Eagle Springs Fire Road', 'Topanga State Park', 'out_back', 13.0, 2427.0, 4, 'peak,spring,views,waterfall')
+   ('Eagle Rock via Mulholland Drive', 'Santa Monica Mountains National Recreation Area', 'out_back', 11.6, 2136.0, 4, 'cave,peak,spring,views')
+   ('San Jacinto Peak Loop', 'Mount San Jacinto State Park', 'loop', 16.4, 5668.0, 4, 'historic,peak,river,spring,views')
+   ('Trans-Catalina Trail', '', 'out_back', 61.3, 4695.0, 4, 'lake,views')
+   ('Carmel Mountain Loop', 'Carmel Mountain Preserve', 'loop', 16.2, 1287.0, 4, 'historic,peak,spring,views,waterfall')
+   ('High Desert National Recreation Trail', 'San Gabriel Mountains National Monument', 'out_back', 54.6, 9693.0, 4, 'peak,spring,views,waterfall')
+   ('Gizmo Peak Loop', 'LA County Sanitation District Open Space', 'loop', 12.1, 2562.0, 4, 'peak,views')
+   ("Wella's Peak Loop", 'San Gabriel Mountains National Monument', 'loop', 14.7, 2384.0, 4, 'historic,lake,peak,views,waterfall')
+   ('Mount Wilson Toll Road', 'Henninger Flats', 'loop', 15.4, 3292.0, 4, 'peak,views')
+   ('PCT - California Section G', 'Owens Peak Wilderness', 'out_back', 53.3, 10494.0, 4, 'spring')
+   ('Eagle Rock via Fire Road 30', 'Topanga State Park', 'out_back', 7.4, 1569.0, 4, 'cave,peak,spring,views')
+   ('Pine Mountain Loop', 'San Bernardino National Forest', 'loop', 22.9, 8116.0, 4, 'peak,spring,views,waterfall')
+   ('Sorrento Hill Loop', 'Los Peñasquitos Canyon Preserve', 'loop', 11.9, 723.0, 3, 'historic,peak,spring,views,waterfall')
+   ('Islip Saddle Day Use Area and Trailhead Loop', 'Pleasant View Ridge Wilderness', 'loop', 21.8, 6026.0, 4, 'peak,spring,views,waterfall')
+   ('Whitney Canyon Waterfalls Loop', 'Whitney Canyon Park', 'loop', 11.5, 2575.0, 4, 'historic,peak,spring,views,waterfall')
+   ('Upper Switzer Falls Loop', 'San Gabriel Mountains National Monument', 'loop', 19.5, 4700.0, 4, 'historic,spring,views,waterfall')
+   ('Mount McKinley Loop', 'San Gabriel Mountains National Monument', 'loop', 17.5, 4342.0, 4, 'peak,spring,views,waterfall')
+   ('Boney Mountain Loop', 'Boney Mountain State Wilderness', 'loop', 17.2, 4359.0, 4, 'historic,peak,views,waterfall')
+   ('Vanalden Vista via Mulholland Drive', 'Topanga State Park', 'out_back', 10.2, 1453.0, 4, 'cave,peak,views')
+   ('Thomas Mountain Loop', 'San Bernardino National Forest', 'loop', 16.6, 2622.0, 4, 'historic,peak,spring,views')
+   ('Muir Peak Loop', 'San Gabriel Mountains National Monument', 'loop', 16.1, 4951.0, 4, 'historic,peak,views,waterfall')
+
+suggested routes, top 25:
+   ('Eagle Rock Loop', 'Topanga State Park', 'loop', 11.8, 2507.0, 4, '["Natoma Trail", "Natoma Ridge Trail", "Mulholland Drive", "Fire Road 30", "Eagle Rock Fire Road (Backbone Trail)", "Eagle Rock Connector"]')
+   ('Green Peak via Temescal Ridge Trail', 'Topanga State Park', 'out_back', 13.6, 2201.0, 4, '["Queen Victoria Trail", "Winnetka Ridge Trail", "Mulholland Drive", "Fire Road 30", "Temescal Ridge Trail"]')
+   ('May Peak Loop', 'Wilson Canyon Park', 'loop', 15.3, 4748.0, 4, '["Walker Ranch Trailhead", "Los Pinetos Trail", "Los Pinetos Spring Road", "Santa Clara Divide Road", "May Canyon Road", "Wilson Canyon Loop Trail"]')
+   ('Gizmo Peak via Eagle Springs Fire Road', 'Topanga State Park', 'out_back', 13.0, 2427.0, 4, '["Nature Trail", "Eagle Springs Fire Road", "Fire Road 30", "Mulholland Drive", "Gizmo Trail", "Farmers Ridge Trail"]')
+   ('Eagle Rock via Mulholland Drive', 'Santa Monica Mountains National Recreation Area', 'out_back', 11.6, 2136.0, 4, '["Queen Victoria Trail", "Winnetka Ridge Trail", "Mulholland Drive", "Fire Road 30", "Eagle Rock Fire Road (Backbone Trail)", "Eagle Rock Connector"]')
+   ('San Jacinto Peak Loop', 'Mount San Jacinto State Park', 'loop', 16.4, 5668.0, 4, '["Seven Pines Trail", "Pacific Crest Trail", "Deer Springs Trail", "Peak Trail", "Old Peak Trail", "Wellman\'s Cienaga Trail"]')
+   ('Carmel Mountain Loop', 'Carmel Mountain Preserve', 'loop', 16.2, 1287.0, 4, '["North Main Trail", "North Side Trail", "Two Bridges", "Shaw Valley Trail", "Fishhead Creek Trail", "Dead Fish Wiggle"]')
+   ('Gizmo Peak Loop', 'LA County Sanitation District Open Space', 'loop', 12.1, 2562.0, 4, '["West Mandeville Fire Road", "Westridge Fire Road", "First Crack", "Sullivan Canyon Trail", "Sullivan Spur Trail", "Mulholland Drive"]')
+   ("Wella's Peak Loop", 'San Gabriel Mountains National Monument', 'loop', 14.7, 2384.0, 4, '["Gabrielino Trail", "Fern Truck Trail", "El Prieto Trail", "Brown Mountain Road", "Ken Burton Trail"]')
+   ('Eagle Rock via Fire Road 30', 'Topanga State Park', 'out_back', 7.4, 1569.0, 4, '["Mulholland Drive", "Fire Road 30", "Eagle Rock Fire Road (Backbone Trail)", "Eagle Rock Connector"]')
+   ('Pine Mountain Loop', 'San Bernardino National Forest', 'loop', 22.9, 8116.0, 4, '["Baldy Road", "Baldy Bowl Trail", "Register Ridge", "Devils Backbone Trail", "North Backbone Trail", "Pacific Crest Trail"]')
+   ('Sorrento Hill Loop', 'Los Peñasquitos Canyon Preserve', 'loop', 11.9, 723.0, 3, '["North Main Trail", "North Side Trail", "Two Bridges", "Wagon Wheel Crossing", "South Main Trail", "San Diego Sea to Sea Trail"]')
+   ('Islip Saddle Day Use Area and Trailhead Loop', 'Pleasant View Ridge Wilderness', 'loop', 21.8, 6026.0, 4, '["Manzanita Trail", "South Fork Trail", "Pacific Crest Trail", "Pleasant View Ridge", "Burkhart Trail", "Devil\'s Chair Trail"]')
+   ('Whitney Canyon Waterfalls Loop', 'Whitney Canyon Park', 'loop', 11.5, 2575.0, 4, '["Walker Ranch Trailhead", "Canyon Trail", "Hidden Trail", "Karen M. Pearson Hillside Trail", "Manzanita Mountain Trail", "Viper"]')
+   ('Upper Switzer Falls Loop', 'San Gabriel Mountains National Monument', 'loop', 19.5, 4700.0, 4, '["Station Ridge Trail", "Gabrielino Trail", "Bear Canyon Trail", "Mount Lowe Motorway", "Millard Canyon Road", "Millard Ridge Road"]')
+   ('Mount McKinley Loop', 'San Gabriel Mountains National Monument', 'loop', 17.5, 4342.0, 4, '["North Trail Canyon Road", "Gold Creek Road", "Yerba Buena Trail (INFREQUENTLY MAINTAINED)", "Yerba Buena Trail", "Mendenhall Ridge Road", "Condor Peak Spur"]')
+   ('Boney Mountain Loop', 'Boney Mountain State Wilderness', 'loop', 17.2, 4359.0, 4, '["Los Robles Trail", "Sycamore-Los Robles Connector Trail", "Wendy Trail", "Windmill Trail", "Wendy-Satwiwa Connector", "Satwiwa Loop Trail"]')
+   ('Vanalden Vista via Mulholland Drive', 'Topanga State Park', 'out_back', 10.2, 1453.0, 4, '["Canyonback Road", "Mulholland Drive", "Farmer Ridge Fire Road", "Farmers Ridge Trail", "Gizmo Trail", "Owen Brown Road"]')
+   ('Thomas Mountain Loop', 'San Bernardino National Forest', 'loop', 16.6, 2622.0, 4, '["Ramona Trail", "Tool Box Spring Campground", "Thomas Mountain Road", "Thomas Mountain Lookout", "Thomas Mountain YP04 and YP05", "Forest Route 6S04"]')
+   ('Muir Peak Loop', 'San Gabriel Mountains National Monument', 'loop', 16.1, 4951.0, 4, '["Eaton Canyon Trail", "Mount Wilson Toll Road", "Altadena Crest Trail", "Rubio Canyon Preserve Trail", "Gooseberry Motorway", "Old Edison Road"]')
+   ('San Gabriel Peak Loop', 'San Gabriel Mountains National Monument', 'loop', 15.1, 5199.0, 4, '["Altadena Crest Trail", "Rubio Canyon Preserve Trail", "Gooseberry Motorway", "Old Edison Road", "Lone Tree Trail", "Mt. Lowe Firebreak"]')
+   ('Pleasant View Ridge Loop', 'Pleasant View Ridge Wilderness', 'loop', 14.4, 5158.0, 4, '["Pacific Crest Trail", "Pleasant View Ridge", "Burkhart Trail"]')
+   ('Brown Mountain Loop', 'San Gabriel Mountains National Monument', 'loop', 14.3, 3864.0, 4, '["Gabrielino Trail", "Gabrielino National Recreation Trail", "Bear Canyon Trail", "Ken Burton Trail"]')
+   ('Wright Mountain Loop', 'San Gabriel Mountains National Monument', 'loop', 13.9, 2390.0, 4, '["Pacific Crest Trail", "Blue Ridge Truck Trail"]')
+   ('Garnet Peak Loop', 'Cleveland National Forest', 'loop', 13.8, 1897.0, 4, '["Big Laguna Trail", "El Prado Spur Trail", "Noble Canyon Trail", "Pacific Crest Trail", "Garnet Peak Trail"]')
+
+spot checks:
+   ('Sandstone Peak Loop', 'Circle X Ranch', 'loop', 5.2, 1087.0, 3, 'historic,peak,views,waterfall')
+   ('Sandstone Peak via Old Cabin Trail', 'Boney Mountain State Wilderness', 'out_back', 13.6, 3810.0, 4, 'historic,peak,views,waterfall')
+   ('Simi Peak via Sandstone Hills Trail', 'Oakbrook Regional Park', 'out_back', 8.8, 2042.0, 4, 'arch,peak,views')
+   ('Mishe Mokwa Trail', 'Circle X Ranch', 'out_back', 5.3, 867.0, 2, 'historic,peak,views,waterfall')
+   ('Upper Switzer Falls Loop', 'San Gabriel Mountains National Monument', 'loop', 19.5, 4700.0, 4, 'historic,spring,views,waterfall')
+   ('Lower Switzer Falls via Gabrielino Trail', 'San Gabriel Mountains National Monument', 'out_back', 3.6, 682.0, 2, 'historic,waterfall')
+   ('Upper Switzer Falls via Gabrielino Trail', 'San Gabriel Mountains National Monument', 'out_back', 2.3, 306.0, 1, 'historic,waterfall')
+   ('Sturtevant Trail', 'San Gabriel Mountains National Monument', 'out_back', 5.2, 2524.0, 4, 'views')
+   ('Sturtevant Trail', 'San Gabriel Mountains National Monument', 'out_back', 1.7, 535.0, 1, 'waterfall')
+   ('Sturtevant Trail (Gabrielino NRT / Silver Moccasin NRT)', 'San Gabriel Mountains National Monument', 'out_back', 1.6, 232.0, 1, 'historic')
+   ('Vivian Creek Trail', 'San Gorgonio Wilderness', 'out_back', 15.6, 4955.0, 4, 'waterfall')
+   ('Black Star Canyon Road', 'Cleveland National Forest', 'out_back', 6.8, 1046.0, 3, 'historic,waterfall')
+   ('Mount Hollywood Loop', 'Griffith Park', 'loop', 2.5, 852.0, 2, 'peak,views')
+   ('Mount Bell via Mount Hollywood Trail', 'Griffith Park', 'out_back', 3.2, 814.0, 2, 'peak,views')
+   ('Mount Hollywood Trail', 'Griffith Park', 'out_back', 2.1, 351.0, 1, 'peak,views')
+   ('Big Tree Cucamonga Road', 'San Bernardino National Forest', 'out_back', 46.4, 9254.0, 4, 'peak,spring,views,waterfall')
+   ('Cucamonga Peak via Icehouse Canyon Trail', 'Cucamonga Wilderness', 'out_back', 11.2, 4182.0, 4, 'peak,spring,views')
+   ('Cucamonga Peak Trail', 'Cucamonga Wilderness', 'out_back', 4.9, 1798.0, 3, 'peak,views')
+   ('Eaton Canyon Trail', 'Eaton Canyon Natural Area and Nature Center', 'out_back', 2.8, 341.0, 1, '')
+   ('Sandstone Peak Loop', 'Circle X Ranch', 'loop', 5.2, 1087.0, 3, 'historic,peak,views,waterfall')
+   ('Sandstone Peak via Old Cabin Trail', 'Boney Mountain State Wilderness', 'out_back', 13.6, 3810.0, 4, 'historic,peak,views,waterfall')
+   ('Sandstone Peak via Backbone Trail', 'Circle X Ranch', 'out_back', 3.0, 959.0, 2, 'historic,peak,views')
+   ('Torrey Pines Loop Trail', 'Gonzales Canyon Open Space', 'loop', 1.8, 282.0, 1, '')
+   ('Torrey Pines Trail', 'Channel Islands National Park', 'out_back', 2.2, 712.0, 2, '')
+   ('San Jacinto Peak Loop', 'Mount San Jacinto State Park', 'loop', 16.4, 5668.0, 4, 'historic,peak,river,spring,views')
+   ('San Jacinto Ridge Truck Trail / East Indian Creek Truck Trail', '', 'out_back', 1.1, 277.0, 1, '')
+   ('Old Echo Mountain Trail', 'San Gabriel Mountains National Monument', 'out_back', 0.9, 535.0, 1, '')
+   ('Mount Wilson Toll Road', 'Henninger Flats', 'loop', 15.4, 3292.0, 4, 'peak,views')
+   ('Mount Yale via Mount Wilson Toll Road', 'Henninger Flats', 'out_back', 12.5, 3790.0, 4, 'peak,views')
+   ('Mount Wilson Trail', 'Sierra Madre Historical Wilderness Area', 'out_back', 11.0, 3922.0, 4, 'historic')
+
+largest parks: [('San Bernardino National Forest', 365), ('San Gabriel Mountains National Monument', 277), ('Cleveland National Forest', 165), ('Topanga State Park', 68), ('Joshua Tree Wilderness', 65), ('Anza-Borrego Desert State Wilderness', 61), ('Santa Rosa and San Jacinto Mountains National Monument', 59), ('Griffith Park', 55), ('Joshua Tree National Park', 53), ('Chino Hills State Park', 49), ('Anza-Borrego Desert State Park', 48), ('Montaña de Oro State Park', 43), ('Santa Monica Mountains National Recreation Area', 41), ('Mission Trails Regional Park', 40), ('Cuyamaca Rancho State Park', 37)]
+reading utah.filtered.osm.pbf
+read: 345431 trail ways, 243 routes, 9875 points, 2145 parks, 1818 lakes, 22817 parking  (26s)
+graph: 227762 junctions, 222328 trail pieces
+trailheads: 3141, destinations: 1758
+suggested routes: 827 (from 1897 candidates, 13s)
+candidates: 5756
+terrain: fetching 1257 tiles
+terrain: done
+trails: 5052  (96s)
+done in 97s
+trails: 5052  parks: 141
+by kind: [('route', 225), ('suggested', 613), ('trail', 4214)]
+by route type: [('loop', 320), ('out_back', 4728), ('point', 4)]
+by difficulty: [(1, 2436), (2, 1094), (3, 621), (4, 901)]
+missing elevation: 0
+  feature waterfall: 339
+  feature peak: 493
+  feature views: 1177
+  feature lake: 483
+  feature river: 434
+  feature beach: 6
+  feature hot_spring: 5
+  feature cave: 71
+  feature historic: 224
+with wikipedia/wikidata: 19
+
+top 25 by score:
+   ('Hayduke Trail #9', 'Bryce Canyon National Park', 'out_back', 64.5, 7278.0, 4, 'arch,historic,peak,spring,views')
+   ('Under-the-Rim Trail', 'Bryce Canyon National Park', 'out_back', 44.4, 9364.0, 4, 'arch,peak,spring,views')
+   ('Zion Narrows Top-Down Hiking Route', 'Deep Creek Wilderness', 'out_back', 28.4, 5351.0, 4, 'peak,river,spring,views,waterfall')
+   ('West Rim Trail', 'Zion Wilderness', 'out_back', 29.3, 5897.0, 4, 'river,spring,views')
+   ('Zion Narrows Bottom-Up Day-Hiking Route', 'Zion Wilderness', 'out_back', 7.1, 1696.0, 4, 'peak,river,spring,views,waterfall')
+   ('Rock Arch Loop', 'Maze District', 'loop', 19.4, 2801.0, 4, 'arch,historic,peak,spring,views')
+   ('Lizard Rock Loop', 'Orange Cliffs Unit of Glen Canyon', 'loop', 19.3, 1346.0, 4, 'arch,peak,spring,views,waterfall')
+   ('Bomber Peak Loop', 'Mount Timpanogos Wilderness', 'loop', 18.9, 5471.0, 4, 'lake,peak,spring,views,waterfall')
+   ('Malans Peak via Indian Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 13.6, 4961.0, 4, 'cave,historic,peak,river,spring,views,waterfall')
+   ('Mount Naomi National Recreation Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 45.4, 13758.0, 4, 'lake,peak,spring,views')
+   ('Naomi Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 24.1, 7325.0, 4, 'lake,peak,spring,views')
+   ('Yovimpa Point Loop', 'Bryce Canyon National Park', 'loop', 10.4, 2081.0, 4, 'spring,views')
+   ('Pioneer Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 12.1, 4330.0, 4, 'lake,peak,spring,views,waterfall')
+   ('Brimhall Point Loop', 'Maze District', 'loop', 12.0, 2033.0, 4, 'arch,historic,peak,spring,views')
+   ('Donner Reed Party and Mormon Pioneer Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 21.9, 2885.0, 4, 'historic,lake,river,spring,views')
+   ('Murdock Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 21.6, 6897.0, 4, 'lake,peak,spring,views')
+   ('Enniss Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 11.6, 4284.0, 4, 'arch,peak,spring,views,waterfall')
+   ('Timpanogos Lower Falls Loop', 'Mount Timpanogos Wilderness', 'loop', 20.9, 5465.0, 4, 'lake,spring,views,waterfall')
+   ('Twin Peaks (east) Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 10.0, 3940.0, 4, 'peak,river,spring,views,waterfall')
+   ('Waterfall via West Rim Trail', 'Zion National Park', 'out_back', 5.7, 1736.0, 3, 'lake,river,views,waterfall')
+   ('Ben Lomond via Cutler Basin Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 13.1, 4090.0, 4, 'lake,peak,river,spring,views,waterfall')
+   ('Pasture Butte Loop', '', 'loop', 16.0, 1633.0, 4, 'arch,historic,peak,spring,views')
+   ('Waterfall via Indian Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 13.0, 4073.0, 4, 'cave,historic,river,spring,views,waterfall')
+   ('Elephant Temple via The Narrows Day Hike Section', 'Zion National Park', 'out_back', 5.4, 1454.0, 3, 'peak,river,views,waterfall')
+   ('Mount Van Cott Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 9.2, 3929.0, 4, 'historic,peak,spring,views,waterfall')
+
+suggested routes, top 25:
+   ('Rock Arch Loop', 'Maze District', 'loop', 19.4, 2801.0, 4, '["Maze Overlook Trail", "South Fork Horse Canyon Route", "Harvest Scene Route", "The Plug Route"]')
+   ('Lizard Rock Loop', 'Orange Cliffs Unit of Glen Canyon', 'loop', 19.3, 1346.0, 4, '["Colorado / Green River Overlook Trail"]')
+   ('Bomber Peak Loop', 'Mount Timpanogos Wilderness', 'loop', 18.9, 5471.0, 4, '["Lame Horse Trail", "Mount Timpanogos Trail", "Timpanogos Summit Trail", "North Timpanogos Ridge Trail", "Timpooneke Trail", "Salamander Flat Trail"]')
+   ('Malans Peak via Indian Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 13.6, 4961.0, 4, '["Cold Water Trail", "Indian Trail", "22nd Street Trail", "Bonneville Shoreline Trail", "Taylor Canyon Trail", "Malans Basin Trail"]')
+   ('Naomi Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 24.1, 7325.0, 4, '["Naomi Peak Trail", "White Pine Cutoff Trail", "White Pine Lake Trail", "White Pine-Bunchgrass Canyon Trail", "Double Top Trail"]')
+   ('Yovimpa Point Loop', 'Bryce Canyon National Park', 'loop', 10.4, 2081.0, 4, '["Lower Podunk Road", "Bull Rush Hollow Trail", "Riggs Spring Loop Trail", "Yovimpa Point Overlook", "Under-the-Rim Trail"]')
+   ('Pioneer Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 12.1, 4330.0, 4, '["Bloods Lake Trail", "Lackawaxen Lake Trail", "Clayton Connect Trail", "Clayton Peak Trail", "Brighton Ridge Run", "Sunset Peak Trail"]')
+   ('Brimhall Point Loop', 'Maze District', 'loop', 12.0, 2033.0, 4, '["Pete\'s Mesa Route", "Harvest Scene Route", "South Fork Horse Canyon Route", "Maze Overlook Trail", "Chimney Rock Route"]')
+   ('Murdock Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 21.6, 6897.0, 4, '["Alexander Basin Trail", "Upper Pipeline Trail", "Lower Big Water Link Trail", "Big Water Trail", "Great Western Trail", "Ridge Connector"]')
+   ('Enniss Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 11.6, 4284.0, 4, '["Ghost Falls Trail", "Corner Canyon Road", "Draper Ridge Trail", "Cherry Canyon Logging Trail", "Jacobs Ladder Trail", "Enniss Peak Trail"]')
+   ('Timpanogos Lower Falls Loop', 'Mount Timpanogos Wilderness', 'loop', 20.9, 5465.0, 4, '["Ridge Trail", "Ridge Connector Trail", "Willow Hollow Trail", "Horse Flat Trail", "Lame Horse Trail", "Mount Timpanogos Trail"]')
+   ('Twin Peaks (east) Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 10.0, 3940.0, 4, '["White Pine Trail", "White Pine-Snowbird Link Trail", "Baby Thunder Trail", "Dean\'s Delight", "Gad Valley Road", "Regulator Johnson Trail"]')
+   ('Waterfall via West Rim Trail', 'Zion National Park', 'out_back', 5.7, 1736.0, 3, '["West Rim Trail", "Walter\'s Wiggles", "Kayenta Trail", "Upper Emerald Pool"]')
+   ('Ben Lomond via Cutler Basin Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 13.1, 4090.0, 4, '["North River Trail", "Traildemic", "Cutler\'s Twist", "Cutler Basin Trail", "Cutler Spring Trail", "Skyline North Trail"]')
+   ('Pasture Butte Loop', '', 'loop', 16.0, 1633.0, 4, '["Wipeout Hill Trail", "W. Courthouse Pasture", "Buttes and Towers / Monitor-Merrimac Trail", "Buttes and Towers Trail", "Courthouse Rock", "East Courthouse Pasture Road"]')
+   ('Waterfall via Indian Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 13.0, 4073.0, 4, '["Cold Water Trail", "Indian Trail", "22nd Street Trail", "Bonneville Shoreline Trail", "Waterfall Canyon Trail"]')
+   ('Elephant Temple via The Narrows Day Hike Section', 'Zion National Park', 'out_back', 5.4, 1454.0, 3, '["Riverside Walk", "The Narrows Day Hike Section"]')
+   ('Mount Van Cott Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 9.2, 3929.0, 4, '["Bonneville Shoreline Trail - Mount Wire Section", "Skyline Trail East", "Quarry Loop Trail", "Skyline Trail West", "Mount Van Cott Trail", "Mount Van Cott South Trail"]')
+   ('Hidden Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 9.0, 3349.0, 4, '["White Pine Trail", "White Pine-Snowbird Link Trail", "Baby Thunder Trail", "Dean\'s Delight", "Gad Valley Road", "Regulator Johnson Trail"]')
+   ('Grove Creek Falls via Grove Creek Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 11.7, 4766.0, 4, '["Bonneville Shoreline Trail", "G Monument Trail", "Old Reservoir Trail", "Indian Trail Road", "Timpooneke-Chris\' Flat Trail", "Grove Creek Trail"]')
+   ('Reynolds Peak Loop', 'Mount Olympus Wilderness', 'loop', 15.8, 4945.0, 4, '["Upper Pipeline Trail", "Lower Big Water Link Trail", "Big Water Trail", "Great Western Trail", "Little Water Trail", "Desolation Trail"]')
+   ('Mount Ogden Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 15.6, 5522.0, 4, '["22nd Street Trail", "Bonneville Shoreline Trail", "Taylor Canyon Trail", "Malans Basin Trail", "Beus Canyon Trail"]')
+   ('Thurston Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 14.8, 5944.0, 4, '["Adams Canyon Trail", "Adams Canyon North Ridge", "Thurston Peak Trail", "Great Western Trail", "Holmes Creek Road", "Bair Canyon Trail"]')
+   ('Peak 7068 Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 14.2, 4316.0, 4, '["Packard Canyon Trail", "Upper Packard Alternate", "Mapleton-Sawmill Hollow Trail", "Kirkman Hollow Trail", "Left Fork Days Canyon Trail", "Packard Cutoff Trail"]')
+   ('Pine Hollow Peak Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 13.8, 3161.0, 4, '["Willow Hollow Trail", "Ridge Connector Trail", "Ridge Trail", "Mud Springs Trail 173", "Tibble Fork Trail", "South Fork Little Deer Creek Trail"]')
+
+spot checks:
+   ('Sandstone Mountain', '', 'out_back', 3.9, 704.0, 2, 'arch')
+   ('Sandstone Mountain Trail', 'Red Cliffs National Conservation Area', 'out_back', 2.6, 551.0, 2, 'arch')
+   ('Mount Baldy Loop', 'Uinta-Wasatch-Cache National Forest', 'loop', 5.1, 2002.0, 3, 'lake,peak,spring,views')
+   ('Mount Baldy North Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 1.5, 1228.0, 3, 'peak,views')
+   ('Mount Baldy Trail', 'Uinta-Wasatch-Cache National Forest', 'out_back', 1.1, 396.0, 1, 'peak,views')
+
+largest parks: [('Uinta-Wasatch-Cache National Forest', 1226), ('Dixie National Forest', 218), ('Fishlake National Forest', 111), ('Red Cliffs National Conservation Area', 95), ('High Uintas Wilderness', 85), ('Capitol Reef National Park', 64), ('Wasatch Mountain State Park', 62), ('Needles District', 42), ('San Rafael Swell Recreation Area', 40), ('Zion Wilderness', 37), ('Island In The Sky District', 31), ('Arches National Park', 30), ('Bryce Canyon National Park', 29), ('Zion National Park', 28), ('Snow Canyon State Park', 27)]
+reading washington.filtered.osm.pbf
+read: 515418 trail ways, 1238 routes, 9780 points, 6393 parks, 3839 lakes, 46169 parking  (56s)
+graph: 321636 junctions, 295567 trail pieces
+trailheads: 5298, destinations: 2764
+suggested routes: 1200 (from 2508 candidates, 24s)
+candidates: 8495
+terrain: fetching 1736 tiles
+terrain: done
+trails: 6960  (191s)
+done in 191s
+trails: 6960  parks: 635
+by kind: [('route', 1171), ('suggested', 879), ('trail', 4910)]
+by route type: [('loop', 604), ('out_back', 6351), ('point', 5)]
+by difficulty: [(1, 3848), (2, 988), (3, 643), (4, 1481)]
+missing elevation: 0
+  feature waterfall: 662
+  feature peak: 1128
+  feature views: 2215
+  feature lake: 1473
+  feature river: 862
+  feature beach: 18
+  feature hot_spring: 19
+  feature cave: 44
+  feature historic: 222
+with wikipedia/wikidata: 32
+
+top 25 by score:
+   ('Alta Vista via Skyline Trail', 'Mount Rainier National Park', 'out_back', 13.6, 4019.0, 4, 'lake,peak,river,spring,views,waterfall')
+   ('Panorama Point via Skyline Trail', 'Mount Rainier Wilderness', 'out_back', 12.6, 3243.0, 4, 'lake,peak,river,spring,views,waterfall')
+   ('American Ridge Trail', 'William O. Douglas Wilderness', 'out_back', 64.4, 18001.0, 4, 'lake,peak,river,spring,views,waterfall')
+   ('Panorama Point via Mazama Ridge Trail', 'Mount Rainier National Park', 'out_back', 10.7, 3089.0, 4, 'lake,peak,river,spring,views,waterfall')
+   ('White Pass - Pilot Ridge Loop', 'Henry M. Jackson Wilderness', 'out_back', 52.1, 15338.0, 4, 'historic,lake,peak,river,spring,views')
+   ('Loowit Trail', 'Mount Saint Helens National Volcanic Monument', 'loop', 26.6, 5615.0, 4, 'hot_spring,lake,peak,river,spring,views,waterfall')
+   ('Viewpoint Loop', 'Daniel J. Evans Wilderness', 'loop', 9.5, 614.0, 3, 'historic,lake,river,views')
+   ('Ozette Loop', 'Daniel J. Evans Wilderness', 'out_back', 17.3, 1022.0, 4, 'historic,lake,river,views')
+   ('Rock Creek Falls Loop', 'Gifford Pinchot National Forest', 'loop', 20.1, 5980.0, 4, 'arch,historic,peak,spring,views,waterfall')
+   ('Spider Meadows Loop', 'Glacier Peak Wilderness', 'out_back', 63.1, 15543.0, 4, 'lake,river,spring,views,waterfall')
+   ('Skyline Trail', 'Mount Rainier National Park', 'loop', 5.6, 1741.0, 3, 'peak,river,spring,views,waterfall')
+   ('Necklace Valley Foss Lakes Loop', 'Alpine Lakes Wilderness', 'out_back', 45.3, 14305.0, 4, 'lake,peak,river,views,waterfall')
+   ('Iron Goat Trail', 'Mount Baker-Snoqualmie National Forest', 'out_back', 18.0, 2277.0, 4, 'historic,river,views')
+   ('Waterfall Loop', '', 'loop', 17.7, 3449.0, 4, 'cave,lake,peak,river,views,waterfall')
+   ('Olymic Coast North', 'Daniel J. Evans Wilderness', 'out_back', 64.0, 40091.0, 4, 'historic,peak,river,views')
+   ('Viewpoint Loop', 'Okanogan-Wenatchee National Forest', 'loop', 18.0, 5819.0, 4, 'historic,lake,peak,river,views')
+   ('Kettle Crest Trail North', 'Colville National Forest', 'out_back', 58.9, 12027.0, 4, 'historic,peak,spring,views')
+   ('East Bank Trail', 'Ross Lake National Recreation Area', 'out_back', 58.8, 2734.0, 4, 'historic,lake,river,views')
+   ('Olympic Hot Springs Loop', 'Daniel J. Evans Wilderness', 'loop', 16.9, 5426.0, 4, 'hot_spring,lake,peak,river,views')
+   ('Wynoochee Lake Shore Trail', 'Olympic National Forest', 'out_back', 30.7, 1500.0, 4, 'beach,lake,river,views,waterfall')
+   ('Icicle Ridge Trail', 'Alpine Lakes Wilderness', 'out_back', 55.4, 20347.0, 4, 'lake,peak,views,waterfall')
+   ('High Rock via Big Creek Trail #252', 'Gifford Pinchot National Forest', 'out_back', 9.3, 3371.0, 4, 'lake,peak,views,waterfall')
+   ('Pollalie Ridge Knob Loop', 'Okanogan-Wenatchee National Forest', 'loop', 15.5, 4451.0, 4, 'historic,lake,peak,river,views')
+   ('Silver Star Mountain Loop', 'Yacolt Burn State Forest', 'loop', 14.7, 3845.0, 4, 'arch,peak,spring,views,waterfall')
+   ('Toutle Trail', 'Mount Saint Helens National Volcanic Monument', 'out_back', 25.3, 3938.0, 4, 'lake,river,spring,views,waterfall')
+
+suggested routes, top 25:
+   ('Alta Vista via Skyline Trail', 'Mount Rainier National Park', 'out_back', 13.6, 4019.0, 4, '["Lower Lakes Trail", "High Lakes Trail", "Mazama Ridge Trail", "Skyline Trail", "Upper Skyline Trail", "Pebble Creek Trail"]')
+   ('Panorama Point via Skyline Trail', 'Mount Rainier Wilderness', 'out_back', 12.6, 3243.0, 4, '["Wonderland Trail", "Lower Lakes Trail", "High Lakes Trail", "Mazama Ridge Trail", "Skyline Trail", "Upper Skyline Trail"]')
+   ('Panorama Point via Mazama Ridge Trail', 'Mount Rainier National Park', 'out_back', 10.7, 3089.0, 4, '["Wonderland Trail", "Mazama Ridge Trail", "Skyline Trail", "Upper Skyline Trail"]')
+   ('Viewpoint Loop', 'Daniel J. Evans Wilderness', 'loop', 9.5, 614.0, 3, '["Cape Alava Trail", "Sand Point Trail", "Ozette River to Sand Pt Beach Travelway", "North Coast Beach Travelway"]')
+   ('Rock Creek Falls Loop', 'Gifford Pinchot National Forest', 'loop', 20.1, 5980.0, 4, '["Starway Trail", "Bluff Mountain Trail", "Sturgeon Trail", "Sturgeon Rock Trail", "Tarbell Trail", "L-1211 Road"]')
+   ('Waterfall Loop', '', 'loop', 17.7, 3449.0, 4, '["(PNT Blue Line) Larry Reed Trail", "(PNT Blue Line) Chuckanut Trail", "(PNT) Samish Bay Connector", "PNT", "Lily Campground Trail", "(PNT) British Army Trail"]')
+   ('Viewpoint Loop', 'Okanogan-Wenatchee National Forest', 'loop', 18.0, 5819.0, 4, '["De Roux Trail #1392", "De Roux Trail", "De Roux Spur Trail", "Koppen Mountain Trail", "Johnson-Medra Trail", "Middle Fork Teanaway Trail"]')
+   ('Olympic Hot Springs Loop', 'Daniel J. Evans Wilderness', 'loop', 16.9, 5426.0, 4, '["Happy Lake Ridge Trail", "Olympic Hot Springs Road", "Olympic Hot Springs Trail", "Boulder Creek Camp Area Switchback Trail", "Appleton Pass Trail", "Boulder Lake Trail"]')
+   ('High Rock via Big Creek Trail #252', 'Gifford Pinchot National Forest', 'out_back', 9.3, 3371.0, 4, '["Big Creek Trail #252", "Forest Road 8440", "High Rock Trail #266"]')
+   ('Pollalie Ridge Knob Loop', 'Okanogan-Wenatchee National Forest', 'loop', 15.5, 4451.0, 4, '["Pete Lake Trail", "Tired Creek Trail", "Polallie Ridge Trail", "Cooper River Trail", "Cooper River/Owhi Campground Trail"]')
+   ('Silver Star Mountain Loop', 'Yacolt Burn State Forest', 'loop', 14.7, 3845.0, 4, '["Tarbell Trail", "Appaloosa Trail", "L-1210 Road", "L-1211 Road", "Sturgeon Rock Trail", "Sturgeon Trail"]')
+   ('Waterfall Loop', 'Daniel J. Evans Wilderness', 'loop', 12.9, 3403.0, 4, '["Lover\'s Lane Trail", "Deer Lake Trail", "Little Divide Trail", "Mink Lake Trail"]')
+   ('Waterfall Loop', 'Alpine Lakes Wilderness', 'loop', 19.0, 5445.0, 4, '["Esmeralda Basin Trail #1394", "Ingalls Way Trail", "Ingalls Creek Trail", "Jack Creek Trail", "Van Epps Trail", "Van Epps Trail 4W302"]')
+   ('Aurora Peak Loop', 'Mount Rainier Wilderness', 'loop', 9.6, 2528.0, 4, '["Westside Road", "St. Andrews Creek Trail", "Wonderland Trail", "North Puyallup Trail"]')
+   ('Dalles Creek Falls Lower Loop', 'Mount Baker-Snoqualmie National Forest', 'loop', 17.8, 4113.0, 4, '["White River Trail", "Palisades Trail", "Ranger Creek Trail", "Dalles Ridge Trail", "Noble Knob Trail", "Deep Creek Trail"]')
+   ('Red Mountain Loop', 'Okanogan-Wenatchee National Forest', 'loop', 17.0, 6824.0, 4, '["Kachess Ridge Trail", "Red Mountain Trail", "Red Mountain Bootpath", "Red Mountain Road", "Little Joe Lake Trail", "Thorp Creek Trail"]')
+   ('Lee Loop', 'Mount Rainier Wilderness', 'loop', 16.5, 4840.0, 4, '["Lakeshore Access", "Wonderland Trail", "Spray Park Trail", "Northern Loop Spur Trail"]')
+   ('Topaz Mountain Loop', 'Pasayten Wilderness', 'loop', 15.8, 4194.0, 4, '["Windy Creek Trail", "Windy Peak Trail", "Basin Creek Trail", "Chewuch Trail", "Cathedral Driveway Trail"]')
+   ('Puyallup Point via Glacier View Trail #267', 'Gifford Pinchot National Forest', 'out_back', 9.2, 2264.0, 4, '["Glacier View Trail #267", "Peak Two Trail #268"]')
+   ('Horseshoe Creek Falls Loop', 'Gifford Pinchot National Forest', 'loop', 14.6, 4231.0, 4, '["Huffman Peak Trail #129", "Lower Siouxon Trail #130D", "Siouxon Trail #130", "Wildcat Trail #156"]')
+   ('Carne Mountain Loop', 'Glacier Peak Wilderness', 'loop', 14.1, 5411.0, 4, '["Phelps Creek Trail", "Carne Mountain Trail #1508", "Carne High Route Trail", "Leroy High Route Trail", "Leroy Creek Trail"]')
+   ('Hawkeye Point Loop', 'Goat Rocks Wilderness', 'loop', 13.9, 3483.0, 4, '["Snowgrass Hiker Trail #96A", "Snowgrass Trail #96", "Goat Ridge Trail #95", "Lily Basin Trail #86", "Bypass Trail #97"]')
+   ('Miller Peak Loop', 'Okanogan-Wenatchee National Forest', 'loop', 25.4, 7403.0, 4, '["Forest Road 9714-113", "County Line Trail", "Miller Peak Trail", "Freedom Peak-Miller Peak bootpath", "Navaho Peak-Freedom Peak bootpath", "Old County Line Trail"]')
+   ('Little Ranger Peak Loop', 'Mount Baker-Snoqualmie National Forest', 'loop', 13.3, 2934.0, 4, '["Snoquera Falls Trail", "White River Trail", "Palisades Trail", "Ranger Creek Trail"]')
+   ('Viewpoint Loop', 'Riverside State Park', 'loop', 12.8, 1171.0, 4, '["Trail 25", "Trail 10", "Trail 212", "Trail 203", "Trail 401", "Trail 400"]')
+
+spot checks:
+   ('Mount Baldy via Domerie Peak Trail #1308', 'Okanogan-Wenatchee National Forest', 'out_back', 4.3, 1990.0, 3, 'peak,views')
+   ('Echo Mountain Loop', 'Spring Lake/Lake Desire Park', 'loop', 1.7, 375.0, 1, 'peak,views')
+   ('Echo Mountain via Powerline Trail', 'McGarvey Park Open Space', 'out_back', 4.8, 594.0, 2, 'peak,views')
+
+largest parks: [('Okanogan-Wenatchee National Forest', 784), ('Gifford Pinchot National Forest', 350), ('Mount Baker-Snoqualmie National Forest', 324), ('Alpine Lakes Wilderness', 200), ('Daniel J. Evans Wilderness', 195), ('Colville National Forest', 162), ('Mount Rainier Wilderness', 137), ('Glacier Peak Wilderness', 118), ('Olympic National Forest', 118), ('Pasayten Wilderness', 88), ('Mount Saint Helens National Volcanic Monument', 81), ('Capitol State Forest', 81), ('William O. Douglas Wilderness', 70), ('Mount Baker Wilderness', 63), ('Cougar Mountain Regional Wildland Park', 61)]
