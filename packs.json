@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "socal",
+      "name": "Southern California",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/socal.db.gz",
+      "bytes": 2879392,
+      "db_bytes": 6795264,
+      "sha256": "a2a581daa9457e12b86a9ca81a0747f97d3bc8392827277ef1890cb213bb3d44",
+      "built": "2026-11-03 17:18",
+      "trails": 5355,
+      "bbox": [
+        32.5347,
+        -121.3457,
+        35.8228,
+        -114.1664
+      ],
+      "schema": 1
+    },
+    {
+      "id": "norcal",
+      "name": "Northern California & Sierra Nevada",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/norcal.db.gz",
+      "bytes": 5743346,
+      "db_bytes": 13709312,
+      "sha256": "faaa6d2d090df63c475f7fa711a30cbe90664bbf44a64123f43f360677991e90",
+      "built": "2026-11-03 17:18",
+      "trails": 9852,
+      "bbox": [
+        35.6998,
+        -124.3646,
+        42.0437,
+        -115.9396
+      ],
+      "schema": 1
+    },
+    {
+      "id": "nevada",
+      "name": "Nevada",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/nevada.db.gz",
+      "bytes": 851876,
+      "db_bytes": 2224128,
+      "sha256": "b121dda49c080a830b0c4aec2a888c081aef59ddf1ca5c32e441462788d70930",
+      "built": "2026-11-03 17:18",
+      "trails": 1477,
+      "bbox": [
+        35.0749,
+        -120.0374,
+        41.9966,
+        -114.0529
+      ],
+      "schema": 1
+    },
+    {
+      "id": "arizona",
+      "name": "Arizona",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/arizona.db.gz",
+      "bytes": 2790813,
+      "db_bytes": 7213056,
+      "sha256": "e41a6f396a757b7476f4c3e6468af68fc9983cd93aee95b207391c0dd4ec1c0d",
+      "built": "2026-11-03 17:18",
+      "trails": 4510,
+      "bbox": [
+        31.3336,
+        -114.7688,
+        37.0806,
+        -108.9742
+      ],
+      "schema": 1
+    },
+    {
+      "id": "utah",
+      "name": "Utah",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/utah.db.gz",
+      "bytes": 3108301,
+      "db_bytes": 8134656,
+      "sha256": "697749504f1cf977338cef3e82f0fe5c2900408b35d3f3079290a5341ecc7ffe",
+      "built": "2026-11-03 17:18",
+      "trails": 5052,
+      "bbox": [
+        36.8716,
+        -114.0376,
+        42.0272,
+        -109.0112
+      ],
+      "schema": 1
+    },
+    {
+      "id": "new-mexico",
+      "name": "New Mexico",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/new-mexico.db.gz",
+      "bytes": 2400018,
+      "db_bytes": 6533120,
+      "sha256": "f803a40ad05373ee72ab085fcbc2c4e33db0a3f28fe0a93de524d6bab43f70ab",
+      "built": "2026-11-03 17:18",
+      "trails": 3679,
+      "bbox": [
+        31.3831,
+        -109.0829,
+        37.018,
+        -103.0488
+      ],
+      "schema": 1
+    },
+    {
+      "id": "colorado",
+      "name": "Colorado",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/colorado.db.gz",
+      "bytes": 4732416,
+      "db_bytes": 12156928,
+      "sha256": "2de2be5b8979019ba0cf6c4c619ead97b4ac150b913ff5315e64d1a8d3b69a14",
+      "built": "2026-11-03 17:18",
+      "trails": 8040,
+      "bbox": [
+        36.9824,
+        -109.1411,
+        41.0144,
+        -102.5043
+      ],
+      "schema": 1
+    },
+    {
+      "id": "oregon",
+      "name": "Oregon",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/oregon.db.gz",
+      "bytes": 2872707,
+      "db_bytes": 7274496,
+      "sha256": "74c5aee84f7103c00d7b35bbd2891ff8666140bd1dcef4e29464439725037f6a",
+      "built": "2026-11-03 17:18",
+      "trails": 4313,
+      "bbox": [
+        41.9676,
+        -124.5602,
+        46.2093,
+        -116.4414
+      ],
+      "schema": 1
+    },
+    {
+      "id": "washington",
+      "name": "Washington",
+      "url": "https://github.com/Seungli21/trailmigo-data/releases/download/packs/washington.db.gz",
+      "bytes": 4335345,
+      "db_bytes": 10510336,
+      "sha256": "1b45463ed0a79d2bd3d444772e71b9a2be437e65f77b25f7327aa6e0c3b6d06d",
+      "built": "2026-11-03 17:18",
+      "trails": 7022,
+      "bbox": [
+        45.5455,
+        -124.7333,
+        49.0445,
+        -116.9307
+      ],
+      "schema": 1
+    }
+  ]
+}
